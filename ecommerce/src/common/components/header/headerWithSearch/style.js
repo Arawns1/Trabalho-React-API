@@ -11,7 +11,10 @@ export const Container = styled.div `
     justify-content: space-between;
     align-items: center;
     padding: 0px 40px;
-    gap: 180px;
+    @media (max-width: 480px) {
+        padding: 0px 20px;
+    }
+    
 `
 export const LeftMenu = styled.div `
     display: flex;
@@ -19,17 +22,25 @@ export const LeftMenu = styled.div `
     align-items: center;
     padding: 0px;
     gap: 18px;
+    img{
+        width: 80%;
+        height: 80%;
+    }
+
 `
 export const SearchBarContainer = styled.div`
     display: flex;
     flex-direction: row;
     position: relative;
+    @media (max-width: 1024px) {
+        display: none;
+    }
 `
 
 export const SearchBar = styled.input `
     all: unset;
     background-color: ${({theme}) => theme.colors.cardsAndSubBG};
-    width: 32vw;
+    width: 30vw;
     height: 40px;
     border-radius:26px;
     padding: 0px 20px;
@@ -49,6 +60,7 @@ export const StyledSearchIcon = styled(FontAwesomeIcon)`
 `;
 
 export const RightMenu = styled.div `
+    justify-self: flex-end;
    
 `
 export const NavList = styled.ul `
@@ -56,7 +68,10 @@ export const NavList = styled.ul `
     flex-direction: row;
     place-items: center;
     padding: 0px;
-    gap: 59px;
+    gap: 40px;
+    @media (max-width: 480px) {
+       gap: 20px;
+    }
 `
 export const NavItem = styled.li `
     list-style: none;
@@ -70,10 +85,15 @@ export const NavItem = styled.li `
         cursor: pointer;
         color: ${({theme}) => theme.colors.titles};
     }
+
 `
 export const StyledIcon = styled(FontAwesomeIcon)`
     color: ${({theme}) => theme.colors.clearText}; /* cor vermelha */
     font-size: 22px; /* tamanho 24 pixels */
+    
+    @media (max-width: 480px) {
+        display: none;
+    }
 `;
 
 export const NavTitle = styled.span`
