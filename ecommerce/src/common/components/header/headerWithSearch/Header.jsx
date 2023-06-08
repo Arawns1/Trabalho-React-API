@@ -1,6 +1,6 @@
 import {Container, LeftMenu, SearchBar, RightMenu, NavList, 
         NavItem, SearchBarContainer, StyledSearchIcon,
-        StyledBagIcon} from './style.js'
+        StyledIcon} from './style.js'
 import { faMagnifyingGlass, faBagShopping, faCircleUser} from '@fortawesome/free-solid-svg-icons';
 export function Header(){
     return(
@@ -17,11 +17,11 @@ export function Header(){
             <RightMenu>
                 <NavList>
                     <NavItem>
-                        <StyledBagIcon icon={faCircleUser}/>
+                        <StyledIcon icon={faCircleUser}/>
                         <span>Minha Conta</span>
                     </NavItem>
                     <NavItem>
-                        <StyledBagIcon icon={faBagShopping}/>
+                        <StyledIcon icon={faBagShopping}/>
                         <span>Carrinho</span>
                     </NavItem>
                 </NavList>
