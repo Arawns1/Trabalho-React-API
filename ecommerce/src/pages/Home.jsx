@@ -1,12 +1,13 @@
 import { Banner } from "../common/components/banner/Banner";
+import { Categories } from "../common/components/categories/Categories";
 
 import {MainContainer} from './style'
 
 export function Home(){
     return(
         <MainContainer>
-            <h1>Essa é a home</h1>
             <Banner/>
+            <Categories/>
         </MainContainer>
     )
 }

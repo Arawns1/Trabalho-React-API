@@ -5,5 +5,8 @@ export const MainContainer = styled.div`
     background-color: blue;
     width: 95%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 `
 
