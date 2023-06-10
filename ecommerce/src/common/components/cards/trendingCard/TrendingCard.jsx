@@ -1,23 +1,22 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
+/* eslint-disable react/prop-types */
+import {ProductCard, ProductInfos} from './style'
+import { AddCart } from '../../buttons/btnAddCart/AddCart';
 
-import {ProductCard} from './style'
-
-export function TrendingCard() {
+export function TrendingCard(props) {
   return (
     <div>
-      <div className="container">
-        <div className="product">
           <ProductCard>
             <img src="https://source.unsplash.com/300x200?cars" alt="" />
-            <span>Nome do Produto</span>
-            <p>R$ 20,99</p>
+            
+            <ProductInfos>
+              <span>{props.nome}</span>
+              <p>R${props.preco}</p>
+            </ProductInfos>
+            
             <div className="bottomProduct">
-              <button className='btnProduct'>Adicionar ao Carrinho<FontAwesomeIcon icon={faCirclePlus} style={{color: "#9460e9",}} /></button>
+              <AddCart/>
             </div>
           </ProductCard>
-        </div>
-      </div>
     </div>
   )
 }

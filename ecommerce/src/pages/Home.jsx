@@ -13,11 +13,9 @@ export function Home(){
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-
         async function fetchData(){
-           const {data: product} = await api.get("/produtos");
+           const {data: product} = await api.get("/produtos/dto");
             setProducts(product);
-            console.log(product)
         }
         fetchData()
         
@@ -29,7 +27,7 @@ export function Home(){
         <MainContainer>
             <Banner/>
             <Categories/>
-            <TrendingProdutcs/>
+            <TrendingProdutcs products ={products}/>
             <FeaturedProducts/>
         </MainContainer>
     )

@@ -7,7 +7,6 @@ export function FeaturedProducts() {
       <h3>Produtos em Destaque</h3>
         <div className="fpGrid">
         <FeaturedCard/>
-        <FeaturedCard/>
       </div>
     </div>
   )
