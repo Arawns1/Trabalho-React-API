@@ -9,6 +9,8 @@ export const ContainerCard = styled.div `
   border-radius: 10px;
   background-color: ${({theme}) => theme.colors.cardsAndSubBG};
   border-radius: 12px;
+  box-shadow: 25px 18px 97px -44px rgba(0,0,0,0.75);
+
   img {
     height: 100%;
     object-fit: contain;

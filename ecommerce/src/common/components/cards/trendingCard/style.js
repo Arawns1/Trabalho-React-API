@@ -9,7 +9,7 @@ export const ProductCard = styled.div`
   border-radius: 10px;
   align-items: center;
   gap: 20px;
-
+  box-shadow: 25px 18px 97px -44px rgba(0,0,0,0.75);
   img {
     border-radius: 12px;
     width: 100%;
