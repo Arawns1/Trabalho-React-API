@@ -1,11 +1,11 @@
 import './App.css'
 import { DefaultButton } from './common/components/DefaultButton'
-import Login from './pages/Login/Login'
+import ItemCarrinho from './common/components/itemCarrinho/itemCarrinho'
 
 function App() {
   return (
     <>
-      <Login></Login>
+        <ItemCarrinho></ItemCarrinho>
     </>
   )
 }

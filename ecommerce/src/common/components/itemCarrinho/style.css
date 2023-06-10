@@ -1,0 +1,38 @@
+.itemCarrinhoContainer {
+  background-color: #010000;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.infoProduto {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  color: #fff;
+}
+
+.nomeProduto,
+.precoProduto,
+.quantidadeProduto {
+  margin-bottom: 0 px;
+  font-size: large;
+}
+
+.formatarButtons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  height: 30px;
+}
+
+
+
