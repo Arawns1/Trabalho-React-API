@@ -1,13 +1,15 @@
 import {Container, LeftMenu, SearchBar, RightMenu, NavList, 
         NavItem, SearchBarContainer, StyledSearchIcon,
-        StyledIcon} from './style.js'
+        StyledIcon, LogoWrapper} from './style.js'
 import { faMagnifyingGlass, faBagShopping, faCircleUser} from '@fortawesome/free-solid-svg-icons';
 export function Header(){
     return(
         <Container>
             <LeftMenu>
-                <img src="/assets/hex_tranparente.png" alt="logo do site" />
-                
+                <LogoWrapper>
+                    <img src="/assets/hex_tranparente.png" alt="logo do site" />
+                </LogoWrapper>
+
                 <SearchBarContainer>
                     <SearchBar placeholder='Pesquisar...'/>
                     <StyledSearchIcon icon={faMagnifyingGlass} />

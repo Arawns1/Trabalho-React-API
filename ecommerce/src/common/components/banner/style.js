@@ -20,7 +20,6 @@ export const BannerContainer = styled.div`
         }
 
         @media (max-width: 1024px) {
-            height: 40vh;
             img{
             object-fit: contain;
             object-position: center;
@@ -50,7 +49,8 @@ export const InfoWrapper = styled.div`
 
     @media (max-width: 480px) {
       text-align: center;
-      align-items: center
+      align-items: center;
+      gap: 0px;
     }
 `
 
@@ -70,15 +70,35 @@ export const BannerTitle = styled.h2`
     color: ${({theme}) => theme.colors.titles};
     font-size: 1.3em;
     text-transform: uppercase;
+    @media (max-width: 480px) {
+        font-size: 1em;   
+    }
 `
 export const BannerSubTitle = styled.h3`
     color: ${({theme}) => theme.colors.clearText};
     font-size: 1.1em;
 
+    @media (max-width: 768px) {
+        font-size:0.9em;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 0.8em;   
+    }
+    @media (max-width: 375px) {
+        display: none;
+    }
+
 `
 export const BannerDescription = styled.p`
     margin: 20px 0px;
     font-size: 0.8em;
+
+    @media (max-width: 768px) {
+        font-size: 0.7em;
+        margin: 5px 0px;
+    }
+
     @media (max-width: 480px) {
       display: none;
     }
@@ -87,4 +107,6 @@ export const BannerDescription = styled.p`
 export const ButtonWrapper = styled.div`
     width: ${props => props.width};
     height: ${props => props.height};
+
+    
 `

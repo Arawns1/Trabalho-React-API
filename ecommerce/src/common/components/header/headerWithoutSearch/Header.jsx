@@ -1,10 +1,12 @@
-import {Container, LeftMenu, RightMenu, NavList, NavItem, StyledIcon} from './style.js'
+import {Container, LeftMenu, RightMenu, NavList, NavItem, StyledIcon,LogoWrapper} from './style.js'
 import { faCircleUser} from '@fortawesome/free-solid-svg-icons';
 export function Header(){
     return(
         <Container>
             <LeftMenu>
-                <img src="/assets/hex_tranparente.png" alt="" />
+                <LogoWrapper>
+                    <img src="/assets/hex_tranparente.png" alt="" />
+                </LogoWrapper>
                 
             </LeftMenu>
             <RightMenu>

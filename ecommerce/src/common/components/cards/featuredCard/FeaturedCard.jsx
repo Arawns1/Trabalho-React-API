@@ -1,7 +1,7 @@
 import { ButtonWrapper } from '../../banner/style'
 import { BuyButton } from '../../buttons/btnBuyNow/BuyButton'
 
-import { ContainerCard, Description, Featured, 
+import { ContainerCard, Description, Featured, ImageWrapper,
          ProductTitle, ProductSubTitle, ProductDescription} from './style'
 
 export function FeaturedCard() {
@@ -21,13 +21,14 @@ export function BannerCard() {
           <ProductSubTitle>Lorem ipsum dolor sit amet</ProductSubTitle>
           <ProductDescription>Lorem ipsum dolor sit amet consectetur adipisicing elit.</ProductDescription>
         </Description>
-        <ButtonWrapper width={'100%'} height={'40px'}>
+        <ButtonWrapper width={'80%'} height={'40px'}>
            <BuyButton />
         </ButtonWrapper>
         
       </Featured>
-      <img src="https://source.unsplash.com/260x333?cars" alt="imagem" />
-
+      <ImageWrapper>
+        <img src="https://source.unsplash.com/260x333?cars" alt="imagem" />
+      </ImageWrapper>
     </ContainerCard>
   )
 }

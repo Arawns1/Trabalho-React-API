@@ -10,12 +10,12 @@ export const ContainerCard = styled.div `
   background-color: ${({theme}) => theme.colors.cardsAndSubBG};
   border-radius: 12px;
   box-shadow: 25px 18px 97px -44px rgba(0,0,0,0.75);
-
-  img {
-    height: 100%;
-    object-fit: contain;
-    border-radius: 0px 12px 12px 0px;
-  }
+  justify-content: space-between;
+    @media (max-width: 768px) {
+      height: 400px;
+      place-items: center;
+      flex-direction: column-reverse;
+    }
 `
 
 export const Featured = styled.div `
@@ -23,17 +23,26 @@ export const Featured = styled.div `
   flex-direction: column;
   justify-content:center;
   gap: 20px;
-  width: 70%;
+  max-width: 600px;
   padding: 20px;
- 
+  @media (max-width: 768px) {
+    gap: 10px;
+    place-items: center;
+    padding: 10px;
+  }
 `
 export const Description = styled.div `
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 200px;
   gap: 8px;
+  @media (max-width: 768px) {
+    gap: 4px;
+    text-align: center;
+    place-items: center;
+    padding: 10px;
+  }
 `
 
 export const ProductTitle =  styled.h3`
@@ -46,4 +55,30 @@ export const ProductSubTitle = styled.h4`
 
 export const ProductDescription = styled.p`
   font-size: 16px;
+  @media (max-width: 768px) {
+        display: none;
+      }
  `
+
+export const ImageWrapper = styled.div`
+      
+  img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      border-radius: 0px 12px 12px 0px;
+
+      @media (max-width: 768px) {
+        border-radius: 12px 12px 0px 0px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      object-fit: cover;
+      object-position: center;
+      height: 50%;
+      width: 100%;
+      flex-direction: column-reverse;
+    }
+   
+`
