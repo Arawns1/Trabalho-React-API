@@ -1,27 +1,22 @@
+/* eslint-disable react/prop-types */
 import { CategoryCard } from "../cards/categoryCard/CategoryCard"
 import {CategoriesContainer, CategoriesCardContainer,CategoryTitle} from "./style"
 
-export function Categories(){
+export function Categories(props){
+
+    const {categories} = props;
+
     return(
         <CategoriesContainer>
         <CategoryTitle>Categorias</CategoryTitle>
         <CategoriesCardContainer>
-            <CategoryCard/>
-            <CategoryCard/>
-            <CategoryCard/>
-            <CategoryCard/>
-            <CategoryCard/>
-            <CategoryCard/>
-            <CategoryCard/>
-            <CategoryCard/>
-            <CategoryCard/>
-            <CategoryCard/>
-            <CategoryCard/>
-            <CategoryCard/>
-            <CategoryCard/>
-            <CategoryCard/>
-            <CategoryCard/>
-            <CategoryCard/>
+            {
+            categories.map(category =>{
+            return(
+                <CategoryCard nome={category.nome}  key={categories.indexOf(category)}/>
+            )})
+                
+            }
         </CategoriesCardContainer>
         </CategoriesContainer>
     )

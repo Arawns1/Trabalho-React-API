@@ -11,22 +11,23 @@ import {MainContainer} from './style'
 export function Home(){
 
     const [products, setProducts] = useState([]);
+    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
         async function fetchData(){
            const {data: product} = await api.get("/produtos/dto");
+           const {data: category} = await api.get("/categorias/dto");
             setProducts(product);
+            setCategories(category);
         }
         fetchData()
-        
-        
     }, []);
 
 
     return(
         <MainContainer>
             <Banner/>
-            <Categories/>
+            <Categories categories={categories}/>
             <TrendingProdutcs products ={products}/>
             <FeaturedProducts/>
         </MainContainer>

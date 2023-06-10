@@ -6,6 +6,9 @@ export const CategoriesContainer = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
     gap: 20px;
+    &:hover{
+        cursor: pointer;
+    }
     
     `
 export const CategoriesCardContainer = styled.div`
