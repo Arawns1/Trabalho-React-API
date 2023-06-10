@@ -4,7 +4,7 @@ export function Header(){
     return(
         <Container>
             <LeftMenu>
-                <img src="https://source.unsplash.com/220x40?cute-animals" alt="" />
+                <img src="https://cdn.discordapp.com/attachments/1081311951914815549/1116861418109685840/imagem_2023-06-09_194723812-removebg-preview.png" alt="" />
                 
             </LeftMenu>
             <RightMenu>
