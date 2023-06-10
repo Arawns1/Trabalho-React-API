@@ -1,12 +1,12 @@
 
 import {ButtonContainer, ButtonTitle, ButtonIcon} from './style'
-import {faCirclePlus} from '@fortawesome/free-solid-svg-icons';
+import {faCartPlus} from '@fortawesome/free-solid-svg-icons';
 
-export function AddCart(){
+export function AddCart(props){
     return(
-        <ButtonContainer>
+        <ButtonContainer onClick={props.action}>
             <ButtonTitle>Adicionar ao Carrinho</ButtonTitle>
-            <ButtonIcon icon={faCirclePlus}/>
+            <ButtonIcon icon={faCartPlus}/>
         </ButtonContainer>
     )
 }
