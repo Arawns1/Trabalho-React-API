@@ -3,9 +3,9 @@ import { TrendingCard } from '../cards/trendingCard/TrendingCard.jsx'
 
 import './style.css'
 
-export function TrendingProdutcs(props) {
+export function TrendingProducts(props) {
 
-  const {products} = props;
+  const {products, cart, cartAction} = props;
 
   return(
     <div className='trending-products-container'>
@@ -15,7 +15,11 @@ export function TrendingProdutcs(props) {
         {
           products.map(product =>{
           return(
-            <TrendingCard nome={product.nome} preco={product.valor_unitario} key={products.indexOf(product)}/>
+            <TrendingCard nome={product.nome} 
+                          preco={product.valor_unitario} 
+                          cart={cart}
+                          cartAction = {cartAction}
+                          key={products.indexOf(product)}/>
           )})
             
         }
