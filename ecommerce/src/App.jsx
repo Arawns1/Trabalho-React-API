@@ -1,14 +1,11 @@
 import './App.css'
 import { DefaultButton } from './common/components/DefaultButton'
+import Login from './pages/Login/Login'
 
 function App() {
   return (
     <>
-      <div>
-        Hello World
-      </div>
-      <DefaultButton type={'sucess'}/>
-      <DefaultButton type={'warning'}/>
+      <Login></Login>
     </>
   )
 }

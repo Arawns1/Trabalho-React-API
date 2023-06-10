@@ -1,0 +1,63 @@
+
+.title {
+    display: block;
+    font-size: 65px;
+    text-align: center;
+    margin-top: -30px;
+    line-height: 2.5;
+}
+
+.input {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.input2 {
+    font-size: 15px;
+    color: black;
+    line-height: 1.2;
+    width: 350px;
+    height: 30px;
+    background-color: #D9D9D9;
+    border-radius: 13px;
+}
+.container-login-form-btn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 13px;
+}
+.login-form-btn {
+    font-size: 15px;
+    border-radius: 10px;
+    color: white;
+    line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 45px;
+    background-color: #9460E9;
+}
+.texto {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    line-height: 4.0;
+    margin-left: 1%;
+
+}
+.texto1 {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    line-height: 4.8;
+    color: #9460E9;
+    margin-right: 5%;
+}
+.esqueceuSenha {
+    height: 30px;
+}
+
+
+
