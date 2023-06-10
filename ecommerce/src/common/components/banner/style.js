@@ -8,7 +8,8 @@ export const BannerContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-
+    margin-top: 20px;
+    border-radius: 20px;
 `
 export const InfoWrapper = styled.div`
     display: flex;
@@ -26,7 +27,7 @@ export const BannerInfo = styled.div`
 `
 export const BannerTitle = styled.h2`
     color: ${({theme}) => theme.colors.titles};
-
+    text-transform: uppercase;
 `
 export const BannerSubTitle = styled.h3`
     color: ${({theme}) => theme.colors.clearText};

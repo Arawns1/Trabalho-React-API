@@ -1,0 +1,10 @@
+h3 {
+  font-size: 32px;
+}
+
+.dpGrid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: center;
+  gap: 2rem;
+}
