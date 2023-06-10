@@ -69,3 +69,14 @@ export const NavTitle = styled.span`
     color: ${({theme}) => theme.colors.clearText};
    
 `
+
+export const LogoWrapper = styled.div`
+    img{
+        width: 100%;
+        height: 100%;
+        max-width: 220px;
+        object-fit: contain;
+        object-position: center;
+    }
+    
+`

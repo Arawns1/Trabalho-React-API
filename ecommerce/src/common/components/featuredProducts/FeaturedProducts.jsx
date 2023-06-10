@@ -3,12 +3,12 @@ import './style.css'
 
 export function FeaturedProducts() {
   return(
-    <div>
-      <h3>Produtos em Destaque</h3>
-        <div className="fpGrid">
-        <FeaturedCard/>
-        <FeaturedCard/>
-      </div>
+    <div className='featured-cards'>
+      <h3 id='featured-card-title'>Produtos em Destaque</h3>
+        <div className="featured-cards-container">
+          <FeaturedCard/>
+          <FeaturedCard/>
+        </div>
     </div>
   )
 }

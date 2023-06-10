@@ -10,7 +10,11 @@ export const CardContainer = styled.div`
     justify-content: center;
     gap: 20px;
     border-radius: 8px;
-   
+    box-shadow: 25px 18px 97px -44px rgba(0,0,0,0.75);
+    &:hover{
+        cursor: pointer;
+    }
+    
 `
 export const CategoryImage = styled.img`
     object-fit: contain;
