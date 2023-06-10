@@ -1,9 +1,4 @@
-input{
-    all: unset;
-}
-button{
-    all: unset;
-}
+
 .container{
     display: flex;
     flex-direction: column;
@@ -33,6 +28,7 @@ button{
 }
 
 .input {
+    all: unset;
     font-size: 15px;
     color: black;
     line-height: 1.2;
@@ -54,6 +50,7 @@ button{
     gap: 3px;
 }
 .login-form-btn {
+    all: unset;
     text-align: center;
     border-radius: 8px;
     width: 100%;
@@ -68,7 +65,9 @@ button{
 .login-form-btn:hover{
     scale: 0.98;
     filter: brightness(0.9);
+    outline: 2px solid #6239a5;
 }
+
 .form-footer{
     display: flex;
     flex-direction: row;
