@@ -1,13 +1,15 @@
 import {Container, LeftMenu, SearchBar, RightMenu, NavList, 
         NavItem, SearchBarContainer, StyledSearchIcon,
-        StyledIcon} from './style.js'
+        StyledIcon, LogoWrapper} from './style.js'
 import { faMagnifyingGlass, faBagShopping, faCircleUser} from '@fortawesome/free-solid-svg-icons';
 export function Header(){
     return(
         <Container>
             <LeftMenu>
-                <img src="https://cdn.discordapp.com/attachments/1081311951914815549/1116861418109685840/imagem_2023-06-09_194723812-removebg-preview.png" alt="" />
-                
+                <LogoWrapper>
+                    <img src="/assets/hex_tranparente.png" alt="logo do site" />
+                </LogoWrapper>
+
                 <SearchBarContainer>
                     <SearchBar placeholder='Pesquisar...'/>
                     <StyledSearchIcon icon={faMagnifyingGlass} />
