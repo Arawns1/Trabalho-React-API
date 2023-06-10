@@ -23,8 +23,7 @@ export const LeftMenu = styled.div `
     padding: 0px;
     gap: 18px;
     img{
-        width: 80%;
-        height: 80%;
+        width: 220px;
     }
 
 `
