@@ -4,25 +4,14 @@ import { Categories } from "../common/components/categories/Categories";
 import { api } from "../services/api"
 import {TrendingProducts} from "../common/components/trendingProducts/TrendingProducts"
 import { FeaturedProducts } from '../common/components/featuredProducts/FeaturedProducts.jsx'
+import { getItem } from "../services/LocalStorage";
 import {MainContainer} from './style'
 
 export function Home(){
 
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
-    const [cart, setCart] = useState([{
-                                        "nome": "Frezzer Eletrolux",
-                                        "descricao": "6 portas, mil litros, muita capacidade",
-                                        "qtd_estoque": 50,
-                                        "data_cadastro": "2023-06-10",
-                                        "valor_unitario": 35000,
-                                        "id_imagem": 1,
-                                        "nome_imagem": "tamagochi.jpeg",
-                                        "categoriaProdDto": {
-                                            "nome": "Eletrodomésticos",
-                                            "descricao": "Geladeiras, microondas, fogões"
-                                        }
-                                    }]);
+    const [cart, setCart] = useState(getItem('carrinho') || []);
 
     useEffect(() => {
         async function fetchData(){
@@ -54,17 +43,11 @@ export function Home(){
         })
         console.log(signup)
     }
-
-    
-    function mostrarCarrinho(){
-        console.log(cart)
-    }
     
     return(
         <MainContainer>
             <button onClick={handleRole}> Cadastrar Role</button>
             <button onClick={handleSignup}> Cadastrar </button>
-            <button onClick={mostrarCarrinho}> Mostrar Carrinho</button>
             <Banner/>
             <Categories categories={categories}/>
             <TrendingProducts products ={products} cart={cart} cartAction={setCart}/>
