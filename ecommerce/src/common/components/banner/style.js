@@ -14,8 +14,8 @@ export const BannerContainer = styled.div`
 export const InfoWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 20px;
     justify-content: center;
+    align-items: flex-start;
 `
 
 export const BannerInfo = styled.div`
@@ -35,5 +35,9 @@ export const BannerSubTitle = styled.h3`
 `
 export const BannerDescription = styled.p`
     margin: 20px 0px;
+ `
 
+export const ButtonWrapper = styled.div`
+    width: ${props => props.width};
+    height: ${props => props.height};
 `
