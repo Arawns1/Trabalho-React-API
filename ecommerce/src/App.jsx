@@ -1,11 +1,13 @@
 import './App.css'
-import { DefaultButton } from './common/components/DefaultButton'
-import ItemCarrinho from './common/components/itemCarrinho/itemCarrinho'
+import { PaymentPage } from './pages/paymentpage/PaymentPage'
+
 
 function App() {
   return (
     <>
-        <ItemCarrinho></ItemCarrinho>
+    
+      <PaymentPage></PaymentPage>
+      
     </>
   )
 }
