@@ -6,6 +6,7 @@ import { CartList, CartContainer, CartTitle, CardActions} from "./style";
 import { useState } from "react";
 import { getItem } from "../../services/LocalStorage";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export function CartPage() {
     const [precoFinal, setPrecoFinal] = useState(0.0);
@@ -16,7 +17,6 @@ export function CartPage() {
       const cart = getItem('carrinho')
 
       useEffect(() => {
-        console.log('i fire once');
         cart.map(item => {
             updateFinalPrice(item.preco)
         })
@@ -36,7 +36,9 @@ export function CartPage() {
             </CartList>
             <CardValortotal totalValue={precoFinal}/>
             <CardActions>
-                <BackButton title={'Voltar as compras'}/>
+                <Link to='/'>
+                    <BackButton title={'Voltar as compras'}/>
+                </Link>
                 <PayButton/>
             </CardActions>
         </CartContainer>

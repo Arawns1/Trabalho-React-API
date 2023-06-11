@@ -14,7 +14,8 @@ export function AllRoutes() {
                     <Route Component={Home}  path='/'></Route>
                 </Route>
                 <Route Component={HeaderWithoutSearch}> {/* Esse aparece em todos que estão dentro dele */}
-                    <Route Component={CartPage}  path='/carrinho'></Route>
+                <Route Component={CartPage}  path='/carrinho'></Route>
+
                 </Route>
                 <Route Component={HeaderWithoutSearch}> {/* Esse aparece em todos que estão dentro dele */}
                     <Route Component={LoginPage}  path='/login'></Route>
