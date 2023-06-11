@@ -8,7 +8,6 @@ import { getItem } from "../services/LocalStorage";
 import {MainContainer} from './style'
 
 export function Home(){
-
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [cart, setCart] = useState(getItem('carrinho') || []);
@@ -16,13 +15,10 @@ export function Home(){
     useEffect(() => {
         async function fetchData(){
            const {data: product} = await api.get("/produtos/dto");
-
            const {data: category} = await api.get("/categorias/dto");
 
            setProducts(product);
            setCategories(category);
-           
-           console.log(product)
         }
         fetchData()
     }, []);
@@ -33,26 +29,13 @@ export function Home(){
             })
         console.log(role)
     }
-
-    async function handleSignup(){
-        const {data: signup} = await api.post("/auth/signup", {
-            "username" : "pedrin",
-            "email" : "pedrin@email.com",
-            "password": "12345678",
-            "role": ["admin"]
-        })
-        console.log(signup)
-    }
-    
     return(
         <MainContainer>
             <button onClick={handleRole}> Cadastrar Role</button>
-            <button onClick={handleSignup}> Cadastrar </button>
             <Banner/>
             <Categories categories={categories}/>
             <TrendingProducts products ={products} cart={cart} cartAction={setCart}/>
             <FeaturedProducts/>
-           
         </MainContainer>
     )
 }

@@ -13,10 +13,14 @@ export const GlobalStyle = createGlobalStyle`
         color-scheme: light dark;
         color: rgba(255, 255, 255, 0.87);
         background-color: ${({theme}) => theme.colors.body};
-        
+
     }
     html, body{
         width: 100vw;
         height: 100vh;
-    }    
+       
+    } 
+    a{
+        all: unset;
+    }   
 `

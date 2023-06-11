@@ -27,6 +27,7 @@ export function Header(){
                         <Link to='/login'><span>Minha Conta</span></Link>
                     </NavItem>
                     <NavItem>
+                        
                         <StyledIcon icon={faBagShopping}/>
                         <Link to='/carrinho'><span>Carrinho</span></Link>
                     </NavItem>

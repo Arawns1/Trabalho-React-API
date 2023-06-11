@@ -1,32 +1,48 @@
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
+import { useEffect, useState } from 'react';
 import './style.css'
 
-export default function ItemCarrinho() {
+export function ItemCarrinho(props) {
   const [quantidade, setQuantidade] = useState(1);
-  const preco = 20; // Preço do produto
+  const [precoTotal, setPrecoTotal] = useState(0.00);
+  
+  const preco = props.valor; // Preço do produto
+
+  useEffect(() => {
+    const novoPrecoTotal = (quantidade * preco).toFixed(2);
+    setPrecoTotal(novoPrecoTotal);
+  }, [quantidade])
 
   const handleAdd = () => {
     setQuantidade(quantidade + 1);
+    props.updateFinalPrice(preco)
   };
 
   const handleRemove = () => {
     if (quantidade > 1) {
       setQuantidade(quantidade - 1);
+      props.updateFinalPrice(-preco)
     }
   };
 
   return (
-  
   <div className="itemCarrinhoContainer">
     <div className="infoProduto">
-      <p className="nomeProduto">Nome do Produto</p>
-      <hr></hr>
-      <p className="precoProduto">Preço: R${preco}</p>
-      <hr></hr>
+      <div className='image-container'>
+        <img src="https://source.unsplash.com/80x80?dogs" alt="Imagem do produto" />
+      </div>
+      <div className='nome-wrapper'>
+        <p className="nomeProduto">{props.nome}</p>
+      </div>
+      <hr/>
       <div className="formatarButtons">
-        <button onClick={handleRemove}>-</button>
-        <p className="quantidadeProduto">Quantidade: {quantidade}</p>
-        <button onClick={handleAdd}>+</button>
+        <button className='btn-qntd' onClick={handleRemove}>-</button>
+        <p className="quantidadeProduto">{quantidade}</p>
+        <button className='btn-qntd' onClick={handleAdd}>+</button>
+      </div>
+      <hr/>
+      <div className='preco-wrapper'>
+        <p className="precoProduto"> R$ {precoTotal}</p>
       </div>
     </div>
   </div>
