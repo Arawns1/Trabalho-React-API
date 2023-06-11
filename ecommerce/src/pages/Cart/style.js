@@ -11,6 +11,15 @@ export const CartContainer = styled.div`
     gap: 20px;
     margin-top: 20px;
 `
+
+export const CardActions = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    height: 60px;
+`
 export const CartTitle = styled.h2`
     display: flex;
     align-self: flex-start;
@@ -21,6 +30,6 @@ export const CartList = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50px;
-    width: 93vw;
+    gap: 30px;
+    width: 100%;
 `
