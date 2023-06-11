@@ -1,13 +1,14 @@
 import './App.css'
+import { Pagamento } from './pages/paginapagamento/Pagamento'
 
-import { CardValortotal } from './common/components/cardvalortotal/cardvalortotal'
+
 
 
 function App() {
   return (
     <>
      
-      <CardValortotal></CardValortotal>
+      <Pagamento></Pagamento>
       
     </>
   )
