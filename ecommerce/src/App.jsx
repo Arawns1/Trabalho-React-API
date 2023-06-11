@@ -1,10 +1,11 @@
 import './App.css'
+import { PaymentPage } from './pages/paymentpage/PaymentPage'
 
-function App() {
+
+export function App() {
   return (
     <>
+      <PaymentPage/>
     </>
   )
 }
-
-export default App
