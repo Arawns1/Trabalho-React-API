@@ -1,28 +1,34 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBagShopping } from '@fortawesome/free-solid-svg-icons'
+import { ButtonWrapper } from '../../banner/style'
+import { BuyButton } from '../../buttons/btnBuyNow/BuyButton'
 
-import {ContainerCard, Description, Featured} from './style'
+import { ContainerCard, Description, Featured, ImageWrapper,
+         ProductTitle, ProductSubTitle, ProductDescription} from './style'
 
 export function FeaturedCard() {
   return (
     <div>
-      <BannerCard/>
+      <BannerCard />
     </div>
   )
 }
 
 export function BannerCard() {
-  return(
+  return (
     <ContainerCard>
       <Featured>
-          <Description>
-            <h4>NOME DO PRODUTO</h4>
-            <p>Legenda com muito impacto</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, voluptatibus, praesentium...</p>
-            <button className='btnFeatured'>Comprar Agora<FontAwesomeIcon icon={faBagShopping}/></button>
-          </Description>
-        <img src="https://source.unsplash.com/260x333?cars" alt="imagem" />
+        <Description>
+          <ProductTitle>Nome do Produto</ProductTitle>
+          <ProductSubTitle>Lorem ipsum dolor sit amet</ProductSubTitle>
+          <ProductDescription>Lorem ipsum dolor sit amet consectetur adipisicing elit.</ProductDescription>
+        </Description>
+        <ButtonWrapper width={'80%'} height={'40px'}>
+           <BuyButton />
+        </ButtonWrapper>
+        
       </Featured>
+      <ImageWrapper>
+        <img src="https://source.unsplash.com/260x333?cars" alt="imagem" />
+      </ImageWrapper>
     </ContainerCard>
   )
 }

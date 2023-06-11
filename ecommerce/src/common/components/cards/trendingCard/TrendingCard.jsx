@@ -1,23 +1,44 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
+/* eslint-disable react/prop-types */
+import {ProductCard, ProductInfos} from './style'
+import { AddCart } from '../../buttons/btnAddCart/AddCart';
+import { AddedCart } from '../../buttons/btnItemAdded/AddedCart';
+import { setItem} from '../../../../services/LocalStorage'
+export function TrendingCard(props) {
 
-import {ProductCard} from './style'
-
-export function TrendingCard() {
+  function handleClick(obj){
+    const element = props.cart.find((e) => e.nome === obj.nome)
+    if(element){
+      const arrFilter = props.cart.filter((e) => e.nome !== obj.nome)
+      props.cartAction(arrFilter)
+      setItem("carrinho", arrFilter)
+    }
+    else{
+      props.cartAction([...props.cart, obj]);
+      setItem("carrinho", [...props.cart, obj])
+    }
+  }
+  
   return (
+
     <div>
-      <div className="container">
-        <div className="product">
           <ProductCard>
             <img src="https://source.unsplash.com/300x200?cars" alt="" />
-            <span>Nome do Produto</span>
-            <p>R$ 20,99</p>
+            
+            <ProductInfos >
+              <span>{props.nome}</span>
+              <p>R${props.preco}</p>
+            </ProductInfos>
+            
             <div className="bottomProduct">
-              <button className='btnProduct'>Adicionar ao Carrinho<FontAwesomeIcon icon={faCirclePlus} style={{color: "#9460e9",}} /></button>
+           {
+              props.cart.some((itemCart) => itemCart.nome === props.nome)?(
+                <AddedCart action={() => {handleClick(props)}}/>
+                ):(
+                <AddCart action={() => {handleClick(props)}}/>
+              )
+           } 
             </div>
           </ProductCard>
-        </div>
-      </div>
     </div>
   )
 }

@@ -5,6 +5,6 @@ export const theme = {
         clearText: '#A8A8B3',
         cardsAndSubBG: '#363638',
         titles: '#FEFFFD',
-        buttonsAndLinks : '#9460E9',
+        buttonsAndLinks : '#9460E9'
     }
 }

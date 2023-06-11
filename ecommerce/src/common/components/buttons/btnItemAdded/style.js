@@ -1,16 +1,17 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-
-export const ButtonContainer = styled.div`
+export const ButtonContainer = styled.button`
+    all: unset;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
-    background-color: ${({theme}) => theme.colors.buttonsAndLinks};
-    width: 100%;
-    height: 100%;
+    justify-content: center;
+    background-color: transparent;
+    width: 250px;
+    height: 20px;
     border-radius: 8px;
+    gap: 8px;
     &:hover{
         cursor:pointer;
         filter: brightness(0.9);
@@ -18,9 +19,12 @@ export const ButtonContainer = styled.div`
 `
 
 export const ButtonTitle = styled.p`
-    font-weight: 600;
-    color: ${({theme}) => theme.colors.Titles};
+    font-weight: 400;
+    font-size: 14px;
+    color: ${({theme}) => theme.colors.buttonsAndLinks};
 `
 export const ButtonIcon = styled(FontAwesomeIcon)`
-    height: 60%;
+    color: ${({theme}) => theme.colors.buttonsAndLinks};
+    width: 22px;
+    height: 32px;
 `
