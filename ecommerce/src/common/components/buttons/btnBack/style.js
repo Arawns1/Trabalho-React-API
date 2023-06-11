@@ -7,19 +7,21 @@ export const ButtonContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    background-color: ${({theme}) => theme.colors.buttonsAndLinks};
-    width: 100%;
+    background-color: ${({theme}) => theme.colors.cardsAndSubBG};
+    width: 280px; 
     height: 100%;
     border-radius: 8px;
+    transition: 1s;
     &:hover{
         cursor:pointer;
         filter: brightness(0.9);
+        scale: 0.98;
     }
 `
 
 export const ButtonTitle = styled.p`
     font-weight: 600;
-    color: ${({theme}) => theme.colors.Titles};
+    color: ${({theme}) => theme.colors.clearText};
 `
 export const ButtonIcon = styled(FontAwesomeIcon)`
     height: 60%;

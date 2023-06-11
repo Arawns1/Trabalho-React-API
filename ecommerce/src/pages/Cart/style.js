@@ -15,9 +15,9 @@ export const CartContainer = styled.div`
 export const CardActions = styled.div`
     display: flex;
     flex-direction: row;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
-    width: 40%;
     height: 60px;
 `
 export const CartTitle = styled.h2`

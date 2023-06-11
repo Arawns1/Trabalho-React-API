@@ -8,12 +8,14 @@ export const ButtonContainer = styled.div`
     align-items: center;
     justify-content: space-around;
     background-color: ${({theme}) => theme.colors.buttonsAndLinks};
-    width: 100%;
+    width: 280px;
     height: 100%;
     border-radius: 8px;
+    transition: 1s;
     &:hover{
         cursor:pointer;
         filter: brightness(0.9);
+        scale: 0.98;
     }
 `
 

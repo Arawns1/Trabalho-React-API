@@ -68,5 +68,14 @@
   filter: brightness(1.2);
 }
 
+.nome-wrapper{
+  width: 200px;
+  text-align: center;
+}
 
+.preco-wrapper{
+  display: flex;
+  justify-content: flex-end;
+  width: 120px;
+}
 
