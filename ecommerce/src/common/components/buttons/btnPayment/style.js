@@ -8,8 +8,8 @@ export const ButtonContainer = styled.div`
     align-items: center;
     justify-content: space-around;
     background-color: ${({theme}) => theme.colors.buttonsAndLinks};
-    width: 280px;
-    height: 100%;
+    width: 280px; 
+    height: 60px;
     border-radius: 8px;
     transition: 1s;
     &:hover{
@@ -25,4 +25,5 @@ export const ButtonTitle = styled.p`
 `
 export const ButtonIcon = styled(FontAwesomeIcon)`
     height: 60%;
+    max-height: 36px;
 `

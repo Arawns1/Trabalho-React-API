@@ -1,10 +1,17 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+export const PaymentWrapper = styled.div`
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+
 export const PaymentContainer = styled.div`
     background-color: ${({ theme }) => theme.colors.menus};
-    width: 70vw;
-    height: 90vh;
+    width: 70%;
+    height: 90%;
     border-radius: 8px;
     display: flex;
     flex-direction:row;
@@ -75,6 +82,7 @@ export const OrderSumary = styled.div`
 export const SumaryTitle = styled.h3`
     font-weight: 500;
     margin-top: 20px;
+    text-align: center;
 `
 
 export const SumaryList = styled.div`

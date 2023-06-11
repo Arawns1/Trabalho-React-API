@@ -5,6 +5,7 @@ import { Home } from '../src/pages/Home'
 import {CartPage} from '../src/pages/Cart/CartPage'
 import {LoginPage} from '../src/pages/Login/LoginPage'
 import {SignUpPage} from '../src/pages/SignUp/SignUpPage'
+import { PaymentPage } from '../src/pages/Payment/PaymentPage'
 
 export function AllRoutes() {
     return (
@@ -20,6 +21,7 @@ export function AllRoutes() {
                 <Route Component={HeaderWithoutSearch}> {/* Esse aparece em todos que estão dentro dele */}
                     <Route Component={LoginPage}  path='/login'></Route>
                     <Route Component={SignUpPage}  path='/cadastro'></Route>
+                    <Route Component={PaymentPage} path='/pagamento'></Route>
                 </Route>
             </Routes>
 

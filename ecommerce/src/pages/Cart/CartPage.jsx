@@ -39,7 +39,9 @@ export function CartPage() {
                 <Link to='/'>
                     <BackButton title={'Voltar as compras'}/>
                 </Link>
-                <PayButton/>
+                <Link to='/pagamento'>
+                    <PayButton/>
+                </Link>
             </CardActions>
         </CartContainer>
     )
