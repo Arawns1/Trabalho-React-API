@@ -6,10 +6,8 @@ import {TrendingProducts} from "../common/components/trendingProducts/TrendingPr
 import { FeaturedProducts } from '../common/components/featuredProducts/FeaturedProducts.jsx'
 import { getItem } from "../services/LocalStorage";
 import {MainContainer} from './style'
-import BasicModal from "../common/components/modals/LoginError/LoginErrorToast";
 
 export function Home(){
-
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [cart, setCart] = useState(getItem('carrinho') || []);
@@ -31,16 +29,13 @@ export function Home(){
             })
         console.log(role)
     }
-
     return(
         <MainContainer>
-            <BasicModal/>
             <button onClick={handleRole}> Cadastrar Role</button>
             <Banner/>
             <Categories categories={categories}/>
             <TrendingProducts products ={products} cart={cart} cartAction={setCart}/>
             <FeaturedProducts/>
-
         </MainContainer>
     )
 }

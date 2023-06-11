@@ -2,13 +2,15 @@ import { useEffect, useState } from 'react';
 import { api } from '../../services/api';
 import './Login.css';
 import LoginErrorToast from '../../common/components/modals/LoginError/LoginErrorToast';
-
+import { setItem } from "../../services/LocalStorage";
+import { useNavigate } from 'react-router-dom';
 export function LoginPage() {
+    let navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
-    const [isLoading, setIsLoading] = useState(false);
     const [open, setOpen] = useState(false);
-    const [severity, setSeverity] = useState('')
+    const [severity, setSeverity] = useState('');
+    const [redirectHome, setRedirectHome] = useState(false);
 
     useEffect(() => {
         if (open) {
@@ -31,20 +33,25 @@ export function LoginPage() {
 
     function handleLogin() {
         api.post('/auth/signin', {
-                username: email,
-                password: senha
-            })
+            username: email,
+            password: senha
+        })
             .then(response => {
-                console.log(response.data);
-                console.log(response.status);
                 setOpen(true);
                 setSeverity('success');
+                setItem('user', response.data);
+                setRedirectHome(true);
             })
             .catch(error => {
-                console.log(error);
                 setOpen(true);
                 setSeverity('error');
             })
+    }
+
+    if (redirectHome) {
+        const timer = setTimeout(() => {
+            return navigate("/")
+        }, 1500);
     }
 
     return (
