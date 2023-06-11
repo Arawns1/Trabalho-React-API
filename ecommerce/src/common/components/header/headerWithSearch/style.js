@@ -72,6 +72,15 @@ export const NavList = styled.ul `
        gap: 20px;
     }
 `
+
+export const StyledIcon = styled(FontAwesomeIcon)`
+    color: ${({theme}) => theme.colors.clearText}; /* cor vermelha */
+    font-size: 22px; /* tamanho 24 pixels */
+
+    @media (max-width: 480px) {
+        display: none;
+    }
+`;
 export const NavItem = styled.li `
     list-style: none;
     display: flex;
@@ -83,18 +92,13 @@ export const NavItem = styled.li `
     &:hover{
         cursor: pointer;
         color: ${({theme}) => theme.colors.titles};
+        ${StyledIcon}{
+        cursor: pointer;
+        color: ${({theme}) => theme.colors.titles};
+        }
     }
-
+   
 `
-export const StyledIcon = styled(FontAwesomeIcon)`
-    color: ${({theme}) => theme.colors.clearText}; /* cor vermelha */
-    font-size: 22px; /* tamanho 24 pixels */
-    
-    @media (max-width: 480px) {
-        display: none;
-    }
-`;
-
 export const NavTitle = styled.span`
     color: ${({theme}) => theme.colors.clearText};
    
@@ -107,6 +111,9 @@ export const LogoWrapper = styled.div`
         max-width: 220px;
         object-fit: contain;
         object-position: center;
+    }
+    &:hover{
+        cursor: pointer;
     }
     
 `
