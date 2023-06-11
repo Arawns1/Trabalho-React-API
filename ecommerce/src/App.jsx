@@ -1,5 +1,5 @@
 import './App.css'
-import { Pagamento } from './pages/paginapagamento/Pagamento'
+import { PaymentPage } from './pages/paymentpage/PaymentPage'
 
 
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
      
-      <Pagamento></Pagamento>
+      <PaymentPage></PaymentPage>
       
     </>
   )
