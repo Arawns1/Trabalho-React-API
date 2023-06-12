@@ -1,11 +1,10 @@
 import './App.css'
-import { DefaultButton } from './common/components/DefaultButton'
-import ItemCarrinho from './common/components/itemCarrinho/itemCarrinho'
+import { TelaPagamento } from './common/components/telaPagamento/telaPagamento'
 
 function App() {
   return (
     <>
-        <ItemCarrinho></ItemCarrinho>
+        <TelaPagamento></TelaPagamento>
     </>
   )
 }
