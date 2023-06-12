@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 
 import {CardContainer, CategoryImage, CategoryTitle} from "./style"
 

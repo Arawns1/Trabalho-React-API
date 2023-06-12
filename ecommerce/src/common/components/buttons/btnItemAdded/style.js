@@ -19,8 +19,8 @@ export const ButtonContainer = styled.button`
 `
 
 export const ButtonTitle = styled.p`
-    font-weight: 400;
-    font-size: 14px;
+    font-weight: 500;
+    font-size: 0.9em;
     color: ${({theme}) => theme.colors.buttonsAndLinks};
 `
 export const ButtonIcon = styled(FontAwesomeIcon)`

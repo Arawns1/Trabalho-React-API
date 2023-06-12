@@ -5,7 +5,7 @@ export const CategoriesContainer = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 20px;
+    gap: 30px;
    
     
     `
