@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
-export const NotFoundContainer = styled.div`
-    width: 100vw;
-    height: 100vh;
+
+export const EmptyCartContainer = styled.div`
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,7 +10,7 @@ export const NotFoundContainer = styled.div`
     gap: 40px;
 `
 
-export const NotFoundContent = styled.div`
+export const EmptyCartContent = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,11 +18,9 @@ export const NotFoundContent = styled.div`
     gap: 20px;
 `
 
-export const NotFoundImage = styled.img`
+export const EmptyCartImage = styled.img`
     width: 50%;
 `
-export const NotFoundTitle = styled.h2``
 
-export const Logo = styled.img`
-    width: 30%;
-`
+
+export const EmptyCartTitle = styled.h2``

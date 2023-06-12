@@ -3,7 +3,7 @@ import { api } from '../../services/api';
 import './Login.css';
 import LoginErrorToast from '../../common/components/modals/LoginError/LoginErrorToast';
 import { setItem } from "../../services/LocalStorage";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 export function LoginPage() {
 
     let navigate = useNavigate();
@@ -33,7 +33,7 @@ export function LoginPage() {
     };
 
     function handleLogin() {
-        api.post('/auth/signin', {
+          api.post('/auth/signin', {
             username: email,
             password: senha
         })
@@ -87,7 +87,7 @@ export function LoginPage() {
                         <div className="form-footer">
                             <div className="criarConta">
                                 <span className="texto">
-                                    Não tem uma conta? <span className="cadastrar">Cadastre-se</span>
+                                    Não tem uma conta? <Link to='/cadastro'><span className="cadastrar">Cadastre-se</span></Link>
                                 </span>
                             </div>
                             <div className="esqueceuSenha">

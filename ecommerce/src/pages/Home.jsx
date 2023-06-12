@@ -16,7 +16,6 @@ export function Home(){
         async function fetchData(){
            const {data: product} = await api.get("/produtos/dto");
            const {data: category} = await api.get("/categorias/dto");
-
            setProducts(product);
            setCategories(category);
         }
