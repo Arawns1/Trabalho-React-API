@@ -5,6 +5,7 @@ import LoginErrorToast from '../../common/components/modals/LoginError/LoginErro
 import { setItem } from "../../services/LocalStorage";
 import { useNavigate } from 'react-router-dom';
 export function LoginPage() {
+
     let navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
@@ -42,14 +43,14 @@ export function LoginPage() {
                 setItem('user', response.data);
                 setRedirectHome(true);
             })
-            .catch(error => {
+            .catch(() => {
                 setOpen(true);
                 setSeverity('error');
             })
     }
 
     if (redirectHome) {
-        const timer = setTimeout(() => {
+        setTimeout(() => {
             return navigate("/")
         }, 1500);
     }

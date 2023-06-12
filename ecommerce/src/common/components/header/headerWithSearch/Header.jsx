@@ -3,6 +3,8 @@ import {Container, LeftMenu, SearchBar, RightMenu, NavList,
         NavItem, SearchBarContainer, StyledSearchIcon,
         StyledIcon, LogoWrapper} from './style.js'
 import { faMagnifyingGlass, faBagShopping, faCircleUser} from '@fortawesome/free-solid-svg-icons';
+import {getItem} from './../../../../services/LocalStorage.js'
+import { DropDown } from '../dropdownMenu/DropDown.jsx';
 
 export function Header(){
     return(
@@ -23,11 +25,19 @@ export function Header(){
             <RightMenu>
                 <NavList>
                     <NavItem>
-                        <StyledIcon icon={faCircleUser}/>
-                        <Link to='/login'><span>Minha Conta</span></Link>
+                    
+                        { getItem('user') ? (
+                            <DropDown user={getItem('user')}/>
+                        ):(
+                            <>
+                                <StyledIcon icon={faCircleUser}/>
+                                <Link to='/login'><span>Minha Conta</span></Link>
+                            </>
+                            
+                        )}
+                        
                     </NavItem>
                     <NavItem>
-                        
                         <StyledIcon icon={faBagShopping}/>
                         <Link to='/carrinho'><span>Carrinho</span></Link>
                     </NavItem>
