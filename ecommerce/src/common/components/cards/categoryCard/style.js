@@ -8,7 +8,7 @@ export const CardContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     border-radius: 8px;
     box-shadow: 25px 18px 97px -44px rgba(0,0,0,0.75);
     &:hover{
