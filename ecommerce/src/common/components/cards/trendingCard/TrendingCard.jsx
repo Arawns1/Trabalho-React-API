@@ -25,7 +25,7 @@ export function TrendingCard(props) {
 
     <div>
           <ProductCard>
-            <img src="https://source.unsplash.com/300x200?cars" alt="" />
+            <img src={props.imagem} alt="imagem do produto"/>
             
             <ProductInfos >
               <span>{props.nome}</span>

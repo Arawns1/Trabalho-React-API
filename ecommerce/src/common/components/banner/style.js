@@ -11,11 +11,11 @@ export const BannerContainer = styled.div`
     margin-top: 20px;
     border-radius: 20px;
     padding: 0px 25px;
-
+    
         img{
             object-fit: contain;
             object-position: center;
-            height: 100%;
+            height: 80%;
             width: 80%;
         }
 
