@@ -2,14 +2,14 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const PaymentWrapper = styled.div`
-    height: 80vh;
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
 `
 
 export const PaymentContainer = styled.div`
-    background-color: ${({ theme }) => theme.colors.menus};
+    background-color: ${({ theme }) => theme.colors.cardsAndSubBG};
     width: 70%;
     height: 90%;
     border-radius: 8px;
@@ -42,6 +42,7 @@ export const PaymentInputs = styled.div`
   flex-direction: column;
   gap: 20px;
   width: 60%;
+  
 `
 
 
@@ -72,7 +73,7 @@ export const OrderSumary = styled.div`
     width: 30%;
     height:100%;
     border-radius: 0px 8px 8px 0px;
-    background-color: ${({ theme }) => theme.colors.cardsAndSubBG};
+    background-color: ${({ theme }) => theme.colors.menus};
     display: flex;
     flex-direction: column;
     padding-top: 20px;

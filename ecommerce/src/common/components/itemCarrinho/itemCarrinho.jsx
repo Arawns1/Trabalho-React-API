@@ -6,6 +6,7 @@ export function ItemCarrinho(props) {
   const [quantidade, setQuantidade] = useState(1);
   const [precoTotal, setPrecoTotal] = useState(0.00);
   
+  
   const preco = props.valor; // Preço do produto
 
   useEffect(() => {
@@ -16,12 +17,14 @@ export function ItemCarrinho(props) {
   const handleAdd = () => {
     setQuantidade(quantidade + 1);
     props.updateFinalPrice(preco)
+    props.updateQuantidade(props.nome, quantidade + 1);
   };
 
   const handleRemove = () => {
     if (quantidade > 1) {
       setQuantidade(quantidade - 1);
       props.updateFinalPrice(-preco)
+      props.updateQuantidade(props.nome, quantidade - 1);
     }
   };
 

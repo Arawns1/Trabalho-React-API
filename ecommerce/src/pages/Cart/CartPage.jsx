@@ -2,25 +2,48 @@ import { BackButton } from "../../common/components/buttons/btnBack/BackButton";
 import { PayButton } from "../../common/components/buttons/btnPayment/PayButton";
 import { CardValortotal } from "../../common/components/cards/cardvalortotal/cardvalortotal";
 import { ItemCarrinho } from "../../common/components/itemCarrinho/itemCarrinho";
-import { CartList, CartContainer, CartTitle, CardActions} from "./style";
+import { CartList, CartContainer, CartTitle, CardActions } from "./style";
 import { useState } from "react";
-import { getItem } from "../../services/LocalStorage";
+import { getItem, setItem} from "../../services/LocalStorage";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export function CartPage() {
     const [precoFinal, setPrecoFinal] = useState(0.0);
+    const [quantidades, setQuantidades] = useState({});
 
-    const updateFinalPrice = (valor) => {
-        setPrecoFinal(prevPrecoFinal => prevPrecoFinal + valor);
-      };
-      const cart = getItem('carrinho')
+    const cart = getItem('carrinho')
 
-      useEffect(() => {
+    useEffect(() => {
         cart.map(item => {
             updateFinalPrice(item.preco)
         })
-      }, [])
+
+    }, [])
+
+    function handleCart() {
+        const carrinho = getItem('carrinho');
+        const novoCarrinho = carrinho.map(item => {
+          item.quantidade = 1;
+          for (const prodQuantidade in quantidades) {
+            if (item.nome === prodQuantidade) {
+              item.quantidade = quantidades[prodQuantidade]
+              break; // encontrou parar o loop
+            }
+          }
+          return item;
+        });
+       setItem('carrinho', novoCarrinho)
+    }
+
+    const updateFinalPrice = (valor) => {
+        setPrecoFinal(prevPrecoFinal => prevPrecoFinal + valor);
+    };
+
+    const updateQuantidade = (nome, quantidade) => {
+        setQuantidades(prevQuantidades => ({ ...prevQuantidades, [nome]: quantidade }));
+    };
+
 
     return (
         <CartContainer>
@@ -28,20 +51,28 @@ export function CartPage() {
             <CartList>
                 {
                     cart.map(item => {
-                        return(
-                            <ItemCarrinho key={cart.indexOf(item)} nome={item.nome} valor={item.preco} updateFinalPrice = {updateFinalPrice}/>
+                        return (
+                            <ItemCarrinho key={item.nome}
+                                nome={item.nome}
+                                valor={item.preco}
+                                quantidade={quantidades[item.nome] || 1}
+                                updateFinalPrice={updateFinalPrice}
+                                updateQuantidade={updateQuantidade} />
+
                         )
                     })
                 }
+
             </CartList>
-            <CardValortotal totalValue={precoFinal}/>
+            <CardValortotal totalValue={precoFinal} />
             <CardActions>
                 <Link to='/'>
-                    <BackButton title={'Voltar as compras'}/>
+                    <BackButton title={'Voltar as compras'} />
                 </Link>
                 <Link to='/pagamento'>
-                    <PayButton/>
+                    <PayButton action={handleCart} />
                 </Link>
+             
             </CardActions>
         </CartContainer>
     )

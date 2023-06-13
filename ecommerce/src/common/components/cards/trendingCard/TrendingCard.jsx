@@ -6,15 +6,18 @@ import { setItem} from '../../../../services/LocalStorage'
 export function TrendingCard(props) {
 
   function handleClick(obj){
-    const element = props.cart.find((e) => e.nome === obj.nome)
+    const carrinhoFiltered = {...obj}
+    delete carrinhoFiltered.cart
+
+    const element = props.cart.find((e) => e.nome === carrinhoFiltered.nome)
     if(element){
-      const arrFilter = props.cart.filter((e) => e.nome !== obj.nome)
+      const arrFilter = props.cart.filter((e) => e.nome !== carrinhoFiltered.nome)
       props.cartAction(arrFilter)
       setItem("carrinho", arrFilter)
     }
     else{
-      props.cartAction([...props.cart, obj]);
-      setItem("carrinho", [...props.cart, obj])
+      props.cartAction([...props.cart, carrinhoFiltered]);
+      setItem("carrinho", [...props.cart, carrinhoFiltered])
     }
   }
   
@@ -22,7 +25,7 @@ export function TrendingCard(props) {
 
     <div>
           <ProductCard>
-            <img src="https://source.unsplash.com/300x200?cars" alt="" />
+            <img src={props.imagem} alt="imagem do produto"/>
             
             <ProductInfos >
               <span>{props.nome}</span>

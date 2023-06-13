@@ -39,7 +39,14 @@ export function Header(){
                     </NavItem>
                     <NavItem>
                         <StyledIcon icon={faBagShopping}/>
-                        <Link to='/carrinho'><span>Carrinho</span></Link>
+                        {
+                            getItem('carrinho')?.length == 0 || getItem('carrinho') == null? (
+                                <Link to='/carrinho-vazio'><span>Carrinho</span></Link>
+                            ):
+                            (
+                                <Link to='/carrinho'><span>Carrinho</span></Link>
+                            )
+                        }
                     </NavItem>
                 </NavList>
             </RightMenu>

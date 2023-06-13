@@ -1,13 +1,14 @@
+/* eslint-disable react/prop-types */
 
 import {SumaryCardContainer, ItemQuantity, ItemName, ItemPrice, SumaryCardContent} from './style'
 
-export function SumaryCard(){
+export function SumaryCard(props){
     return(
         <SumaryCardContainer>
             <SumaryCardContent>
-                <ItemQuantity>1x</ItemQuantity>
-                <ItemName>Celular brabo</ItemName>
-                <ItemPrice>R$ 20.00</ItemPrice>
+                <ItemQuantity>{props.quantidade}x</ItemQuantity>
+                <ItemName>{props.nome}</ItemName>
+                <ItemPrice>R$ {props.valor}</ItemPrice>
             </SumaryCardContent>
         </SumaryCardContainer>
     )

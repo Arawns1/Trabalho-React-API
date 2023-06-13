@@ -5,8 +5,19 @@ import {PaymentContainer, PaymentInfo, PaymentInputs, OrderSumary, PaymentTitle,
 import {PayButton} from '../../common/components/buttons/btnPayNow/PayButton.jsx'
 import {faLock} from '@fortawesome/free-solid-svg-icons';
 import { SumaryCard } from '../../common/components/cards/sumaryCard/SumaryCard.jsx';
+import { useEffect } from 'react';
+import { getItem } from "../../services/LocalStorage.js";
+import { useState } from 'react';
 
 export function PaymentPage(){
+
+    const [cart, setCart] = useState([])
+
+    useEffect(() => {
+        setCart(getItem('carrinho'))
+    }, [])
+
+
     return(
         <PaymentWrapper>
             <PaymentContainer>
@@ -30,15 +41,19 @@ export function PaymentPage(){
             <OrderSumary>
                 <SumaryTitle>Resumo do Pedido</SumaryTitle>
                 <SumaryList>
-                    <SumaryCard></SumaryCard>
-                    <SumaryCard></SumaryCard>
-                    <SumaryCard></SumaryCard>
-                    <SumaryCard></SumaryCard>
+                    {
+                        cart.map(item => {
+                            return (
+                                <SumaryCard key={cart.indexOf(item)} nome={item.nome} valor={item.preco} quantidade={item.quantidade}></SumaryCard>
+                            )
+                           
+                        })
+                    }
                 </SumaryList>
                 
                 <SumaryTotalCard>
                     <TotalTitle>Valor Total</TotalTitle>
-                    <TotalValue>R$ 20.00</TotalValue>
+                    <TotalValue>R$ {cart.reduce((acc, current) => {return acc + (current.preco*current.quantidade);}, 0).toFixed(2)}</TotalValue>
                 </SumaryTotalCard>
             </OrderSumary>
         </PaymentContainer>

@@ -1,25 +1,29 @@
+import { useState } from 'react'
 import { ButtonWrapper } from '../../banner/style'
 import { BuyButton } from '../../buttons/btnBuyNow/BuyButton'
 
 import { ContainerCard, Description, Featured, ImageWrapper,
          ProductTitle, ProductSubTitle, ProductDescription} from './style'
+import { useEffect } from 'react'
 
-export function FeaturedCard() {
-  return (
-    <div>
-      <BannerCard />
-    </div>
-  )
-}
+export function FeaturedCard(props) {
+  const [numero, setNumero] = useState(0)
+  useEffect(() => {
+    setNumero(props.numero)
+  },[])
 
-export function BannerCard() {
+  if (!props.product || !props.product[numero]) {
+    return null;
+  }
+
   return (
     <ContainerCard>
+       
       <Featured>
         <Description>
-          <ProductTitle>Nome do Produto</ProductTitle>
-          <ProductSubTitle>Lorem ipsum dolor sit amet</ProductSubTitle>
-          <ProductDescription>Lorem ipsum dolor sit amet consectetur adipisicing elit.</ProductDescription>
+          <ProductTitle>{props.product[numero].nome}</ProductTitle>
+          <ProductSubTitle>{props.product[numero].categoriaProdDto.nome}</ProductSubTitle>
+          <ProductDescription>{props.product[numero].descricao}</ProductDescription>
         </Description>
         <ButtonWrapper width={'80%'} height={'40px'}>
            <BuyButton />
@@ -27,7 +31,7 @@ export function BannerCard() {
         
       </Featured>
       <ImageWrapper>
-        <img src="https://source.unsplash.com/260x333?cars" alt="imagem" />
+        <img src={props.product[numero].url_imagem} alt="imagem" />
       </ImageWrapper>
     </ContainerCard>
   )

@@ -16,9 +16,9 @@ export function Home(){
         async function fetchData(){
            const {data: product} = await api.get("/produtos/dto");
            const {data: category} = await api.get("/categorias/dto");
-
            setProducts(product);
            setCategories(category);
+           console.log(product)
         }
         fetchData()
     }, []);
@@ -35,7 +35,7 @@ export function Home(){
             <Banner/>
             <Categories categories={categories}/>
             <TrendingProducts products ={products} cart={cart} cartAction={setCart}/>
-            <FeaturedProducts/>
+            <FeaturedProducts products={products}/>
         </MainContainer>
     )
 }

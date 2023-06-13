@@ -13,21 +13,20 @@ export const StyledLabel = styled.label`
    background-color: ${({theme}) => theme.colors.Title}; 
    font-size: 0.9rem;
    font-weight: 300;
-   &::after{
-    
-   }
 `
-
 
 export const StyledInput = styled.input`
     all: unset;
     width: 100%;
     padding: 10px;
     border-radius: 8px;
-    background-color: ${({theme}) => theme.colors.cardsAndSubBG};
+    background-color: #454547;
     border: 1px solid ${({theme}) => theme.colors.body};
     &:focus{
         outline: 1px solid ${({theme}) => theme.colors.cardsAndSubBG};
+    }
+    &::placeholder{
+        color: rgba(255, 255, 255, 0.25)
     }
     
 `

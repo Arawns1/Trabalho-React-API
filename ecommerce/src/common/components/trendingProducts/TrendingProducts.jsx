@@ -19,8 +19,11 @@ export function TrendingProducts(props) {
                           preco={product.valor_unitario} 
                           cart={cart}
                           cartAction = {cartAction}
-                          key={products.indexOf(product)}/>
-          )})
+                          key={products.indexOf(product)}
+                          imagem={product.url_imagem}/>
+          )
+          
+        })
             
         }
         </div>
