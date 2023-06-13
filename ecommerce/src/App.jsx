@@ -1,11 +1,11 @@
 import './App.css'
 import { DefaultButton } from './common/components/DefaultButton'
-import Login from './pages/Login/Login'
+import { Cadastro } from './pages/Cadastro/Cadastro'
 
 function App() {
   return (
     <>
-      <Login></Login>
+      <Cadastro></Cadastro>
     </>
   )
 }

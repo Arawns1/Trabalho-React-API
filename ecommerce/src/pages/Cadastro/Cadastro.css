@@ -1,0 +1,62 @@
+.container {
+    width: 90vw;
+}
+.container-cadastro {
+    
+}
+.title {
+    font-size: 70px;
+   
+}
+.subtitulo {
+    line-height: 3.5;
+    text-align: left;
+    font-size: 25px;
+}
+.input {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input2 {
+    font-size: 15px;
+    color: black;
+    height: 40px;
+    background-color: #D9D9D9;
+    border-radius: 13px;
+    width: 600px;
+}
+.infoendereco .input2 {
+    width: 550px;
+}
+.input3 {
+    font-size: 15px;
+    color: black;
+    height: 40px;
+    background-color: #D9D9D9;
+    border-radius: 13px;
+    width: 200px;
+}
+.titul {
+    font-size: 20px;
+
+}
+.form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.numcomple {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.divcomplemento {
+    display: flex;
+    flex-direction: column;
+}
+.divcomplemento input {
+    width: 250px;
+}
+
