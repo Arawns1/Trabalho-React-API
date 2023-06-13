@@ -47,7 +47,7 @@ export function Cadastro() {
                         </div>
                         <label className="titul">CEP</label>
                         <div className="input">
-                            <input className="input3" type="cep" placeholder="Informe seu CEP" />
+                            <input className="input2" type="cep" placeholder="Informe seu CEP" />
                         </div>
                         <div className="numcomple">
                             <div className="input divcomplemento">
@@ -71,6 +71,9 @@ export function Cadastro() {
                         <label className="titul">Bairro</label>
                         <div className="input">
                             <input className="input2" type="bairro" placeholder="Informe seu bairro" />
+                        </div>
+                        <div className="container-login-form-btn">
+                        <button className="login-form-btn">Entrar</button>
                         </div>
                     </div>
                 </form>
