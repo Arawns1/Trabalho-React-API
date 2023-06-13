@@ -6,7 +6,6 @@ export function ItemCarrinho(props) {
   const [quantidade, setQuantidade] = useState(1);
   const [precoTotal, setPrecoTotal] = useState(0.00);
   
-  
   const preco = props.valor; // Preço do produto
 
   useEffect(() => {
@@ -25,6 +24,7 @@ export function ItemCarrinho(props) {
       setQuantidade(quantidade - 1);
       props.updateFinalPrice(-preco)
       props.updateQuantidade(props.nome, quantidade - 1);
+      console.log(props)
     }
   };
 
@@ -32,7 +32,7 @@ export function ItemCarrinho(props) {
   <div className="itemCarrinhoContainer">
     <div className="infoProduto">
       <div className='image-container'>
-        <img src="https://source.unsplash.com/80x80?dogs" alt="Imagem do produto" />
+        <img src={props.imagem} alt="Imagem do produto" />
       </div>
       <div className='nome-wrapper'>
         <p className="nomeProduto">{props.nome}</p>

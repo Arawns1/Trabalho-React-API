@@ -90,7 +90,6 @@ export const SumaryList = styled.div`
     display: flex;
     flex-direction: column;
     gap: 8px;
-
 `
 
 export const SumaryTotalCard = styled.div`
@@ -102,7 +101,6 @@ export const SumaryTotalCard = styled.div`
     gap: 10px;
     border-radius: 8px;
     margin: 0px 10px;
-    padding: 0px 15px;
 `
 export const TotalTitle = styled.h3`
     font-weight: 400;

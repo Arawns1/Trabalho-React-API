@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import {ProductCard, ProductInfos} from './style'
+import {ProductCard, ProductInfos, ProductImage, ImageWrapper} from './style'
 import { AddCart } from '../../buttons/btnAddCart/AddCart';
 import { AddedCart } from '../../buttons/btnItemAdded/AddedCart';
 import { setItem} from '../../../../services/LocalStorage'
@@ -25,7 +25,9 @@ export function TrendingCard(props) {
 
     <div>
           <ProductCard>
-            <img src={props.imagem} alt="imagem do produto"/>
+            <ImageWrapper>
+              <ProductImage src={props.imagem} alt="imagem do produto"/>
+            </ImageWrapper>
             
             <ProductInfos >
               <span>{props.nome}</span>

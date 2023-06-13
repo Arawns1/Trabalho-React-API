@@ -55,6 +55,7 @@ export function CartPage() {
                             <ItemCarrinho key={item.nome}
                                 nome={item.nome}
                                 valor={item.preco}
+                                imagem={item.imagem}
                                 quantidade={quantidades[item.nome] || 1}
                                 updateFinalPrice={updateFinalPrice}
                                 updateQuantidade={updateQuantidade} />
