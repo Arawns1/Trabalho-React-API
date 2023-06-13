@@ -9,6 +9,7 @@
     display: flex;
     justify-content: left;
     align-items: left;
+    margin-left: 70px;
    
 }
 .subtitulo {
@@ -27,10 +28,11 @@
     height: 40px;
     background-color: #D9D9D9;
     border-radius: 13px;
-    width: 600px;
+    width: 500px;
 }
 .infoendereco .input2 {
-    width: 550px;
+    width: 400px;
+    margin-right: 80px;
 }
 .input3 {
     font-size: 15px;
@@ -42,31 +44,40 @@
 }
 .titul {
     font-size: 20px;
+    margin-right: 70px;
+}
+.titu {
+    font-size: 20px;
 
 }
+
 .form {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-left: 70px;
 }
 .numcomple {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-right: 80px;
     
 }
 .divcomplemento {
     display: flex;
     flex-direction: column;
+    
 }
 .divcomplemento input {
-    width: 250px;
+    width: 180px;
 }
 .container-login-form-btn {
     display: flex;
     flex-wrap: wrap;
     justify-content: right;
     padding-top: 15%;
+    margin-right: 80px;
 
 }
 .login-form-btn {

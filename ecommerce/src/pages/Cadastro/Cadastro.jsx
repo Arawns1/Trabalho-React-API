@@ -1,11 +1,13 @@
 import './Cadastro.css'
-
+import Logo from './img/logo.png'
 
 export function Cadastro() {
     return (
         <div className="container">
             <div className="container-cadastro">
                 <span className="title">Cadastro</span>
+
+                <img src={Logo} alt="Logo" srcset="Logo" />
 
                 <form className="form">
                     <div className="infodados">
@@ -42,6 +44,7 @@ export function Cadastro() {
                         </div>
                     </div>
                     <div className="infoendereco">
+                        
                         <div className="subtitulo">
                             <span className="endereco">Informações de Endereço:</span>
                         </div>
@@ -51,12 +54,12 @@ export function Cadastro() {
                         </div>
                         <div className="numcomple">
                             <div className="input divcomplemento">
-                                <label className="titul">Número</label>
+                                <label className="titu">Número</label>
                                 <input className="input3" type="numero" placeholder="ex: 154" />
                             </div>
 
                             <div className="input divcomplemento">
-                                <label className="titul">Complemento</label>
+                                <label className="titu">Complemento</label>
                                 <input className="input3" type="complemento" placeholder="ex: A" />
                             </div>
                         </div>
