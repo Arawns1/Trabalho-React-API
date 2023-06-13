@@ -5,8 +5,12 @@ import {Container, LeftMenu, SearchBar, RightMenu, NavList,
 import { faMagnifyingGlass, faBagShopping, faCircleUser} from '@fortawesome/free-solid-svg-icons';
 import {getItem} from './../../../../services/LocalStorage.js'
 import { DropDown } from '../dropdownMenu/DropDown.jsx';
+import { useProducts } from '../../../hooks/useProducts.jsx';
 
 export function Header(){
+
+    const {products, setFilteredProducts} = useProducts();
+
     return(
         <>
         <Container>
@@ -17,10 +21,9 @@ export function Header(){
                     </LogoWrapper>
                 </Link>
                 <SearchBarContainer>
-                    <SearchBar placeholder='Pesquisar...'/>
+                    <SearchBar placeholder='Pesquisar...' onChange={(e) => setFilteredProducts(products.filter(product => product.nome.toLowerCase().includes(e.target.value.toLowerCase())))}/>
                     <StyledSearchIcon icon={faMagnifyingGlass} />
                 </SearchBarContainer>
-                
             </LeftMenu>
             <RightMenu>
                 <NavList>
