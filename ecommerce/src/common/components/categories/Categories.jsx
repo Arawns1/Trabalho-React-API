@@ -8,16 +8,16 @@ import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import "./styles.css";
 import "swiper/css/navigation";
-import celulares from "../../../../public/assets/categories/Celulares.webp";
-import consoles from "../../../../public/assets/categories/Consoles.webp";
-import gabinetes from "../../../../public/assets/categories/Gabinetes.webp";
-import headsets from "../../../../public/assets/categories/Headsets.webp";
-import kitGamer from "../../../../public/assets/categories/Kit Gamer.webp";
-import monitores from "../../../../public/assets/categories/Monitores.webp";
-import mouses from "../../../../public/assets/categories/Mouses.webp";
-import notebooks from "../../../../public/assets/categories/Notebooks.webp";
-import tablets from "../../../../public/assets/categories/Tablets.webp";
-import teclados from "../../../../public/assets/categories/Teclados.webp";
+import celulares from "/assets/categories/Celulares.webp";
+import consoles from "/assets/categories/Consoles.webp";
+import gabinetes from "/assets/categories/Gabinetes.webp";
+import headsets from "/assets/categories/Headsets.webp";
+import kitGamer from "/assets/categories/Kit Gamer.webp";
+import monitores from "/assets/categories/Monitores.webp";
+import mouses from "/assets/categories/Mouses.webp";
+import notebooks from "/assets/categories/Notebooks.webp";
+import tablets from "/assets/categories/Tablets.webp";
+import teclados from "/assets/categories/Teclados.webp";
 import { useState } from "react";
 
 export function Categories(props) {

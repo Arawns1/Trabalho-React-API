@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from 'react';
 import { setItem } from '../../services/LocalStorage';
 import { api } from '../../services/api';
@@ -28,7 +29,6 @@ export function SignUpPage() {
     const [numero, setNumero] = useState('');
     const [dataNascimento, setDataNascimento] = useState('');
     const [senha, setSenha] = useState('');
-    const [confirmaSenha, setConfirmaSenha] = useState('');
     const [cep, setCep] = useState('');
 
     useEffect(() => {
@@ -60,9 +60,6 @@ export function SignUpPage() {
     }
     function handleSenhaChange(e) {
         setSenha(e.target.value)
-    }
-    function handleConfirmaSenhaChange(e) {
-        setConfirmaSenha(e.target.value)
     }
     function handleCEPChange(e) {
         setCep(e.target.value)
