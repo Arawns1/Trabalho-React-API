@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ItemCarrinhoContainer = styled.div `
-  background-color: ${({theme}) => theme.colors.body};
+  background-color: ${({theme}) => theme.colors.cardsAndSubBG};
   padding: 10px;
   border: none;
   border-radius: 8px;

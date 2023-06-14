@@ -15,18 +15,18 @@ export function AllRoutes() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route Component={Header}> {/* Esse aparece em todos que estão dentro dele */}
-                    <Route Component={Home}  path='/'></Route>
-                </Route>
-                <Route Component={HeaderWithoutSearch}> {/* Esse aparece em todos que estão dentro dele */}
-                    <Route Component={CartPage}  path='/carrinho'></Route>
-                    <Route Component={EmptyCartPage}  path='/carrinho-vazio'></Route>
-                    <Route Component={LoginPage}  path='/login'></Route>
-                    <Route Component={SignUpPage}  path='/cadastro'></Route>
-                    <Route Component={PaymentPage} path='/pagamento'></Route>
-                    <Route Component={OrderComplete} path='/pedido-concluido'></Route>
-                    <Route Component={MyOrdersPage} path='/meus-pedidos'></Route>
-                </Route>
+                    <Route Component={Header}> {/* Esse aparece em todos que estão dentro dele */}
+                        <Route Component={Home}  path='/'></Route>
+                    </Route>
+                    <Route Component={HeaderWithoutSearch}> {/* Esse aparece em todos que estão dentro dele */}
+                        <Route Component={CartPage}  path='/carrinho'></Route>
+                        <Route Component={EmptyCartPage}  path='/carrinho-vazio'></Route>
+                        <Route Component={LoginPage}  path='/login'></Route>
+                        <Route Component={SignUpPage}  path='/cadastro'></Route>
+                        <Route Component={PaymentPage} path='/pagamento'></Route>
+                        <Route Component={OrderComplete} path='/pedido-concluido'></Route>
+                        <Route Component={MyOrdersPage} path='/meus-pedidos'></Route>
+                    </Route>
                 <Route Component={NotFoundPage} path='*'/>
             </Routes>
 
