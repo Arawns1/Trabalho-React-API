@@ -6,7 +6,7 @@ export function CardInput (props) {
     return(
         <InputContainer>
             <StyledLabel>{props.label}</StyledLabel>
-            <StyledInput maxLength={props.maxLength} placeholder={props.placeholder} required={props.required}/>
+            <StyledInput type={props.type} maxLength={props.maxLength} placeholder={props.placeholder} required={props.required}/>
         </InputContainer>
     )
 }

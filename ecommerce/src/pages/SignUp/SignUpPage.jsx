@@ -1,9 +1,26 @@
-import './style.css'
-import { useState } from 'react';
-import { api } from '../../services/api';
+import { useState, useEffect } from 'react';
 import { setItem } from '../../services/LocalStorage';
+import { api } from '../../services/api';
+import { useNavigate } from 'react-router-dom';
+import {
+    AddressInformation,
+    ButtonContainer,
+    ButtonTitle, ButtonWrapper,
+    CadastroContainer,
+    CadastroContent,
+    CadastroInput,
+    CadastroTitle,
+    InputDiv,
+    PersonalInformation
+} from './Style';
+import './style.css';
+import SignUpErrorToast from '../../common/components/modals/SignUpError/SignUpErrorToast';
 
 export function SignUpPage() {
+    let navigate = useNavigate();
+    const [redirectHome, setRedirectHome] = useState(false);
+    const [open, setOpen] = useState(false);
+    const [severity, setSeverity] = useState('');
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [cpf, setCPF] = useState('');
@@ -13,6 +30,18 @@ export function SignUpPage() {
     const [senha, setSenha] = useState('');
     const [confirmaSenha, setConfirmaSenha] = useState('');
     const [cep, setCep] = useState('');
+
+    useEffect(() => {
+        if (open) {
+            const timer = setTimeout(() => {
+                setOpen(false);
+            }, 99999999);
+            return () => {
+                clearTimeout(timer);
+            };
+        }
+    }, [open]);
+
 
     function handleNomeChange(e) {
         setNome(e.target.value)
@@ -39,7 +68,7 @@ export function SignUpPage() {
         setCep(e.target.value)
     }
 
-    function handleNumero(e) {
+    function handleNumeroChange(e) {
         setNumero(e.target.value)
     }
 
@@ -61,94 +90,90 @@ export function SignUpPage() {
                 "email": email,
                 "cpf": cpf,
                 "telefone": telefone,
-                "data_nascimento": dataNascimento,
+                "data_nascimento": dataNascimento.toString(),
                 "endereco": {
                     "id_endereco": response.data.id_endereco
                 }
             }).then(response => {
-                    api.post('/auth/signin', {
-                        "username": nome.replaceAll(" ", ""),
-                        "password": senha
-                    }).then(response => setItem('user', response.data))
-                }) 
-            )
+                api.post('/auth/signin', {
+                    "username": nome.replaceAll(" ", ""),
+                    "password": senha
+                }).then(response => {
+                    setOpen(true);
+                    setSeverity('success');
+                    setItem('user', response.data);
+                    setRedirectHome(true);
+                }).catch(error => {
+                    setOpen(true);
+                    setSeverity('error');
+                })
+            })
+        )
     }
 
-return (
-    <div className='cadastro-wrapper'>
-        <div className="container-cadastro">
-            <span className="title-cadastro">Cadastro</span>
-            <div className="form-cadastro">
-                <div className="infodados">
-                    <div className="subtitulo-cadastro">
-                        <span className="dados">Dados Pessoais:</span>
-                    </div>
-                    <label >Nome</label>
-                    <div className="input-cadastro">
-                        <input className="input2-cadastro" type="text" placeholder="Digite o seu nome" onChange={handleNomeChange} />
-                    </div>
-                    <label >Email</label>
-                    <div className="input-cadastro">
-                        <input className="input2-cadastro" type="email" placeholder="Digite o seu Email" onChange={handleEmailChange} />
-                    </div>
-                    <label >CPF</label>
-                    <div className="input-cadastro">
-                        <input className="input2-cadastro" maxLength={10} type="number" placeholder="Digite o seu CPF" onChange={handleCPFChange} />
-                    </div>
-                    <label >Telefone</label>
-                    <div className="input-cadastro">
-                        <input className="input2-cadastro" type="tel" placeholder="Digite o seu telefone" onChange={handleTelefoneChange} />
-                    </div>
-                    <label >Data de Nascimento</label>
-                    <div className="input-cadastro">
-                        <input className="input2-cadastro" type="date" placeholder="DD/MM/YYYY" onChange={handleDataNascimentoChange} />
-                    </div>
-                    <label >Crie uma Senha</label>
-                    <div className="input-cadastro">
-                        <input className="input2-cadastro" type="text" placeholder="Crie uma senha" onChange={handleSenhaChange} />
-                    </div>
-                    <label >Confirme a sua senha</label>
-                    <div className="input-cadastro">
-                        <input className="input2-cadastro" type="text" placeholder="Confirme a sua senha" onChange={handleConfirmaSenhaChange} />
-                    </div>
-                </div>
-                <div className="infoendereco">
-                    <div className="subtitulo-cadastro">
-                        <span className="endereco">Informações de Endereço:</span>
-                    </div>
-                    <label>CEP</label>
-                    <div className="input-cadastro">
-                        <input className="input2-cadastro" type="number" placeholder="Informe seu CEP" onChange={handleCEPChange} />
-                    </div>
-                    <div className="numcomple">
-                        <div className="input-cadastro divcomplemento">
-                            <label >Número</label>
-                            <input className="input3-cadastro" type="number" placeholder="ex: 154" onChange={handleNumero} />
-                        </div>
+    if (redirectHome) {
+        setTimeout(() => {
+            return navigate("/")
+        }, 1500);
+    }
 
-                        <div className="input-cadastro divcomplemento">
-                            <label >Complemento</label>
-                            <input className="input3-cadastro" type="text" placeholder="ex: casa" />
-                        </div>
-                    </div>
-                    <label >Cidade</label>
-                    <div className="input-cadastro">
-                        <input className="input2-cadastro" type="text" placeholder="Informe sua cidade" />
-                    </div>
-                    <label >Rua</label>
-                    <div className="input-cadastro">
-                        <input className="input2-cadastro" type="text" placeholder="Informe sua rua" />
-                    </div>
-                    <label >Bairro</label>
-                    <div className="input-cadastro">
-                        <input className="input2-cadastro" type="text" placeholder="Informe seu bairro" />
-                    </div>
-                    <div className="container-login-form-btn-cadastro">
-                        <button className="login-form-btn-cadastro" onClick={saveUser}>Cadastrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-)
+
+    return (
+        <>
+            {
+                open ? <SignUpErrorToast show={open} severity={severity} /> : ''
+            }
+
+            <CadastroContainer>
+                <CadastroTitle>Cadastro</CadastroTitle>
+                <CadastroContent>
+                    <PersonalInformation>
+                        <InputDiv>
+                            <label>Nome</label>
+                            <CadastroInput type={'text'} placeholder={'Digite seu nome'} onChange={handleNomeChange} />
+                        </InputDiv>
+
+                        <InputDiv>
+                            <label>Email</label>
+                            <CadastroInput type={'email'} placeholder={'Digite seu email'} onChange={handleEmailChange} />
+                        </InputDiv>
+                        <InputDiv>
+                            <label>CPF</label>
+                            <CadastroInput type={'text'} maxLength={11} placeholder={'Digite seu CPF'} onChange={handleCPFChange} />
+                        </InputDiv>
+                        <InputDiv>
+                            <label>Telefone</label>
+                            <CadastroInput type={'tel'} placeholder={'Digite seu telefone'} onChange={handleTelefoneChange} />
+                        </InputDiv>
+
+
+                    </PersonalInformation>
+                    <AddressInformation>
+                        <InputDiv>
+                            <label>Data de Nascimento</label>
+                            <CadastroInput type={'date'} placeholder={'Digite sua data de nascimento'} onChange={handleDataNascimentoChange} />
+                        </InputDiv>
+                        <InputDiv>
+                            <label>Senha</label>
+                            <CadastroInput type={'text'} placeholder={'Digite uma senha'} onChange={handleSenhaChange} />
+                        </InputDiv>
+                        <InputDiv>
+                            <label>CEP</label>
+                            <CadastroInput type={'text'} placeholder={'Digite seu CEP'} onChange={handleCEPChange} />
+                        </InputDiv>
+                        <InputDiv>
+                            <label>Número</label>
+                            <CadastroInput type={'numero'} placeholder={'Digite o número'} onChange={handleNumeroChange} />
+                        </InputDiv>
+                        <ButtonWrapper onClick={saveUser}>
+                            <ButtonContainer>
+                                <ButtonTitle>Cadastre-se</ButtonTitle>
+                            </ButtonContainer>
+                        </ButtonWrapper>
+                    </AddressInformation>
+                </CadastroContent>
+
+            </CadastroContainer>
+        </>
+    )
 }

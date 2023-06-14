@@ -12,7 +12,7 @@ export const Container = styled.div `
     align-items: center;
     padding: 0px 40px;
     position: fixed;
-    z-index: 999999999999999;
+    z-index: 1000;
     @media (max-width: 480px) {
         padding: 0px 20px;
     }
