@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { FeaturedCard } from '../../components/cards/featuredCard/FeaturedCard.jsx'
-import './style.css'
+import { FeatCard,
+  FeaturedCardTitle,
+  FeaturedCardContainer } from './style.js';
 
 export function FeaturedProducts(props) {
   const [numero1, setNumero1] = useState(sortNumber);
@@ -17,12 +19,12 @@ export function FeaturedProducts(props) {
   }, []);
 
   return(
-    <div className='featured-cards'>
-      <h3 id='featured-card-title'>Produtos em Destaque</h3>
-        <div className="featured-cards-container">
+    <FeatCard>
+      <FeaturedCardTitle>Produtos em Destaque</FeaturedCardTitle>
+        <FeaturedCardContainer>
           <FeaturedCard numero={numero1}  product={props.products} />
           <FeaturedCard numero={numero2}  product={props.products} />
-        </div>
-    </div>
+        </FeaturedCardContainer>
+    </FeatCard>
   )
 }

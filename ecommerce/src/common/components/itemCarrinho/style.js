@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ItemCarrinhoContainer = styled.div `
-  background-color: ${({theme}) => theme.colors.body};
+  background-color: ${({theme}) => theme.colors.cardsAndSubBG};
   padding: 10px;
   border: none;
   border-radius: 8px;
@@ -33,5 +33,59 @@ export const ImageContainer = styled.div `
   img {
     width: 100%;
     height: 100%;
+  }
+`
+
+export const NomeWrapper = styled.div `
+  width: 200px;
+  text-align: center;
+`
+
+export const PrecoWrapper = styled.div `
+  display: flex;
+  justify-content: flex-end;
+  width: 120px;
+`
+
+export const NomeProduto = styled.p `
+  margin-bottom: 0 px;
+  font-size: large;
+`
+
+export const PrecoProduto = styled.p `
+  margin-bottom: 0 px;
+  font-size: 1.2em;
+  font-weight: 700;
+  white-space: nowrap;
+`
+
+export const QuantidadeProduto = styled.p `
+  margin-bottom: 0 px;
+  font-size: large;
+`
+
+export const FormatButtons = styled.button `
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+`
+
+export const BtnQuantidade = styled.button `
+  all: unset;
+  background-color: rgba(33, 33, 36, 0.94);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  font-size: 1.2em;
+  font-weight: 600;
+  :hover {
+    cursor: pointer;
+    filter: brightness(1.2);
   }
 `
