@@ -24,4 +24,5 @@ Um ecommerce na área de informática. https://loja-hexbyte.vercel.app/
 
 ## Screenshots
 
-![](https://cdn.discordapp.com/attachments/1081311951914815549/1118644294027321405/gif.gif)
+![App Screenshot](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjZmY2M2MjdkMWIwMzAyNmIwNGM4YzJmMzI3NDM5N2IwOTcxMjY4NyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/P0RURsLof5LV0Unp81/giphy.gif)
+
