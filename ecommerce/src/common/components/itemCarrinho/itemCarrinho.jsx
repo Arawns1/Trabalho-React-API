@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
+import { ItemCarrinhoContainer, InfoProduto, ImageContainer } from './style';
 import './style.css'
 
 export function ItemCarrinho(props) {
@@ -28,11 +29,11 @@ export function ItemCarrinho(props) {
   };
 
   return (
-  <div className="itemCarrinhoContainer">
-    <div className="infoProduto">
-      <div className='image-container'>
+  <ItemCarrinhoContainer>
+    <InfoProduto>
+      <ImageContainer>
         <img src={props.imagem} alt="Imagem do produto" />
-      </div>
+      </ImageContainer>
       <div className='nome-wrapper'>
         <p className="nomeProduto">{props.nome}</p>
       </div>
@@ -46,7 +47,7 @@ export function ItemCarrinho(props) {
       <div className='preco-wrapper'>
         <p className="precoProduto"> R$ {precoTotal}</p>
       </div>
-    </div>
-  </div>
+    </InfoProduto>
+  </ItemCarrinhoContainer>
   );
 }

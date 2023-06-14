@@ -11,6 +11,7 @@ import { EmptyCartPage } from "../Exceptions/EmptyCartPage/EmptyCart";
 import { useCart } from "../../common/hooks/useCart";
 import { LoginButton } from "../../common/components/buttons/btnLogin/LoginButton";
 
+
 export function CartPage() {
     const [precoFinal, setPrecoFinal] = useState(0.0);
     const [quantidades, setQuantidades] = useState({});
@@ -19,6 +20,7 @@ export function CartPage() {
 
     useEffect(() => {
         cart.map(item => {
+
             updateFinalPrice(item.valor_unitario)
         })
     }, [])

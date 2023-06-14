@@ -5,7 +5,7 @@ export const ContainerCard = styled.div `
   flex-direction: row;
   width:43vw;
   height: 300px;
-  background-color: #363638;
+  background-color: ${({theme}) => theme.colors.body};
   border-radius: 10px;
   background-color: ${({theme}) => theme.colors.cardsAndSubBG};
   border-radius: 12px;

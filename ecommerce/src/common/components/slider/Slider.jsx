@@ -1,6 +1,9 @@
 import { useRef } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import img from '../../../../public/assets/banner/banner1.png'
+import img1 from '../../../../public/assets/banner/b2.png'
+
 
 // Import Swiper styles
 import 'swiper/css';
@@ -33,11 +36,12 @@ export default function Slider() {
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="Slider"
+        className="SliderShow"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide><img src={img} alt="" /></SwiperSlide>
+        <SwiperSlide><img src={img1} alt="" /></SwiperSlide>
+        <SwiperSlide><img src={img} alt="" /></SwiperSlide>
+
 
       </Swiper>
     </div>

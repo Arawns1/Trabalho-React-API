@@ -7,7 +7,6 @@ import {
   ProductTitle, ProductSubTitle, ProductDescription
 } from './style'
 import { useEffect } from 'react'
-
 import { BuyButton } from '../../buttons/btnBuyNow/BuyButton'
 
 
@@ -15,6 +14,7 @@ export function FeaturedCard(props) {
 
 
   const [numero, setNumero] = useState(0)
+
 
 
   useEffect(() => {

@@ -1,19 +1,20 @@
 import { Link } from 'react-router-dom';
-import './style.css'
+import { PagamentoFinalizado, PedidoNumForm, PedidoNum, ButtonForm, Btn } from './style';
+
 
 export function OrderComplete() {
   const numPedido = 999; // Número do pedido
 
   return (
     <div>
-        <p className="pagamentoFinalizado">Pagamento Finalizado com Sucesso!</p>
-        <div className="pedidoNum-form">
-            <p className="pedidoNum">Pedido #{numPedido}</p>
-        </div>
+        <PagamentoFinalizado>Pagamento Finalizado com Sucesso!</PagamentoFinalizado>
+        <PedidoNumForm>
+            <PedidoNum>Pedido #{numPedido}</PedidoNum>
+        </PedidoNumForm>
         
-        <div className="button-form">
-            <Link to='/'><button className="button">Tela Inicial</button> </Link>
-        </div>
+        <ButtonForm>
+            <Link to='/'><Btn>Tela Inicial</Btn> </Link>
+        </ButtonForm>
     </div>
   );
 }

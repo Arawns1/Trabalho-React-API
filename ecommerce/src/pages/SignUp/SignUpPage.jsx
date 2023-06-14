@@ -92,6 +92,7 @@ export function SignUpPage() {
                     "id_endereco": response.data.id_endereco
                 }
             }).then(response => {
+
                 setItem('cliente', response.data);
                 api.post('/auth/signin', {
                     "username": nome.replaceAll(" ", ""),

@@ -30,6 +30,7 @@ export function TrendingCard(props) {
     <div>
       <ProductCard>
         <ImageWrapper>
+
           <ProductImage src={props.product.url_imagem} alt="imagem do produto" />
         </ImageWrapper>
         <ProductInfos >

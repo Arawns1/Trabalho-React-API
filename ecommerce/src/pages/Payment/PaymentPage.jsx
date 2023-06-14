@@ -9,6 +9,8 @@ import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { SumaryCard } from '../../common/components/cards/sumaryCard/SumaryCard.jsx';
 import { useEffect } from 'react';
 import { useState } from 'react';
+
+
 import PaymentErrorToast from '../../common/components/modals/PaymentError/PaymentErrorToast.jsx';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../../services/api.js';
@@ -27,6 +29,7 @@ export function PaymentPage() {
     const [open, setOpen] = useState(false);
     const [severity, setSeverity] = useState('');
     const [cart, setCart] = useState([])
+    
     function handleNomeChange(e) {
         setNomeTitular(e.target.value);
     }
@@ -39,7 +42,7 @@ export function PaymentPage() {
     function handleCVVChange(e) {
         setCVV(e.target.value);
     }
-
+  
     useEffect(() => {
         setCart(getItem('carrinho'))
         if (open) {
@@ -58,6 +61,7 @@ export function PaymentPage() {
             setSeverity('error');
             return ''
         } else {
+
 
             var data = new Date;
             var dataString = `${data.getFullYear()}-${String(data.getMonth()+1).padStart(2,'0')}-${data.getDate()}`
@@ -130,6 +134,7 @@ export function PaymentPage() {
                             {
                                 cart.map(item => {
                                     return (
+
                                         <SumaryCard key={cart.indexOf(item)}  quantidade={item.quantidade} nome={item.nome} valor={item.valor_unitario}></SumaryCard>
                                     )
                                 })

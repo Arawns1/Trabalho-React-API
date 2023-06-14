@@ -1,26 +1,29 @@
 /* eslint-disable react/prop-types */
 import { TrendingCard } from '../cards/trendingCard/TrendingCard.jsx'
-
-import './style.css'
+import { TrendingProductsContainer, ProductsTitle, GridContainer, DpGrid } from './style.js';
 
 export function TrendingProducts(props) {
 
   const {products} = props;
-
   return(
-    <div className='trending-products-container'>
-      <h3 className='productsTitle'>Produtos em alta</h3>
-      <div className='grid-container'>
-        <div className='dpGrid'>
+    <TrendingProductsContainer>
+      <ProductsTitle>Produtos em alta</ProductsTitle>
+      <GridContainer>
+        <DpGrid>
         {
           products.map(product =>{
           return(
-            <TrendingCard product={product} key={products.indexOf(product)}/>
+            <TrendingCard nome={product.nome} 
+                          preco={product.valor_unitario} 
+                          key={products.indexOf(product)}
+                          imagem={product.url_imagem}/>
           )
+          
         })
+            
         }
-        </div>
-      </div>
-    </div>
+        </DpGrid>
+      </GridContainer>
+    </TrendingProductsContainer>
   )
 }

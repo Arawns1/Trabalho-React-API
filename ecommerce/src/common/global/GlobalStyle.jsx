@@ -15,11 +15,11 @@ export const GlobalStyle = createGlobalStyle`
         background-color: ${({theme}) => theme.colors.body};
 
     }
-    html, body{
+    /* html, body{
         width: 100vw;
         height: 100vh;
-       
-    } 
+    } */
+
     a{
         all: unset;
     }   

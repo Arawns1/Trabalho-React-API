@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { api } from '../../services/api';
-import './Login.css';
 import LoginErrorToast from '../../common/components/modals/LoginError/LoginErrorToast';
 import { setItem } from "../../services/LocalStorage";
 import { Link, useNavigate } from 'react-router-dom';
+import { Container, ContainerLogin, Title, LoginForm, FormBody, InputContainer, ContainerLoginFormBtn, LoginFormBtn, CriarConta, Cadastrar, EsqueceuSenha, Input } from './style';
 export function LoginPage() {
 
     let navigate = useNavigate();
@@ -62,47 +62,44 @@ export function LoginPage() {
                 open ? <LoginErrorToast show={open} severity={severity} /> : ''
             }
 
-            <div className="container">
-                <div className="container-login">
-                    <span className="title">Login</span>
-                    <div className="login-form">
-                        <div className="form-body">
-                            <div className="input-container">
-                                <input
-                                    className="input"
+            <Container>
+                <ContainerLogin>
+                    <Title>Login</Title>
+                    <LoginForm>
+                        <FormBody>
+                            <InputContainer>
+                                <Input
                                     type="text"
                                     placeholder="Digite seu usuário"
                                     required
                                     onChange={handleUsernameChange}
                                     value={username}
                                 />
-                                <input
-                                    className="input"
+                                <Input
                                     type="password"
                                     placeholder="Digite sua senha"
                                     required
                                     onChange={handleSenhaChange}
                                     value={senha}
                                 />
-                                <div className="esqueceuSenha">
+                                <EsqueceuSenha>
                                     <span>Esqueceu sua senha?</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="container-login-form-btn">
-                            <button className="login-form-btn" onClick={handleLogin}>
+                                </EsqueceuSenha>
+                            </InputContainer>
+                        </FormBody>
+                        <ContainerLoginFormBtn>
+                            <LoginFormBtn onClick={handleLogin}>
                                 Entrar
-                            </button>
-                            <div className="criarConta">
+                            </LoginFormBtn>
+                            <CriarConta>
                                 <span className="texto">
-                                    Não tem uma conta? <Link to='/cadastro'><span className="cadastrar">Cadastre-se</span></Link>
+                                    Não tem uma conta? <Link to='/cadastro'><Cadastrar>Cadastre-se</Cadastrar></Link>
                                 </span>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+                            </CriarConta>
+                        </ContainerLoginFormBtn>
+                    </LoginForm>
+                </ContainerLogin>
+            </Container>
         </>
     );
 }
