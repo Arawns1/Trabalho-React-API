@@ -15,14 +15,9 @@ export function TrendingProducts(props) {
         {
           products.map(product =>{
           return(
-            <TrendingCard nome={product.nome} 
-                          preco={product.valor_unitario} 
-                          key={products.indexOf(product)}
-                          imagem={product.url_imagem}/>
+            <TrendingCard product={product} key={products.indexOf(product)}/>
           )
-          
         })
-            
         }
         </div>
       </div>
