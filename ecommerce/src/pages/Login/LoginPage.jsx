@@ -44,8 +44,10 @@ export function LoginPage() {
                         setSeverity('success');
                         setRedirectHome(true);
                         setItem('cliente', response.data);
-                        console.log(response.data)
                     } );
+                }).catch(() => {
+                    setOpen(true);
+                    setSeverity('error');
                 })
         }
     if (redirectHome) {

@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import img from '../../../../public/assets/banner/banner1.png'
 import img1 from '../../../../public/assets/banner/b2.png'
 
+
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -40,6 +41,7 @@ export default function Slider() {
         <SwiperSlide><img src={img} alt="" /></SwiperSlide>
         <SwiperSlide><img src={img1} alt="" /></SwiperSlide>
         <SwiperSlide><img src={img} alt="" /></SwiperSlide>
+
 
       </Swiper>
     </div>

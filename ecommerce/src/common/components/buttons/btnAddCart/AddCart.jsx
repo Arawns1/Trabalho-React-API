@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+
 
 import {ButtonContainer, ButtonTitle, ButtonIcon} from './style'
 import {faCartPlus} from '@fortawesome/free-solid-svg-icons';

@@ -7,16 +7,15 @@ import {
   ProductTitle, ProductSubTitle, ProductDescription
 } from './style'
 import { useEffect } from 'react'
-import { setItem } from '../../../../services/LocalStorage'
-import { AddedCart } from '../../buttons/btnItemAdded/AddedCart'
-import { AddCart } from '../../buttons/btnAddCart/AddCart'
-import { useCart } from '../../../hooks/useCart'
+import { BuyButton } from '../../buttons/btnBuyNow/BuyButton'
 
 
 export function FeaturedCard(props) {
+
+
   const [numero, setNumero] = useState(0)
 
-  const {cart, setCart} = useCart();
+
 
   useEffect(() => {
     setNumero(props.numero)
@@ -24,22 +23,6 @@ export function FeaturedCard(props) {
 
   if (!props.product || !props.product[numero]) {
     return null;
-  }
-
-  function handleClick(obj) {
-    const carrinhoFiltered = { ...obj }
-    delete carrinhoFiltered.cart
-
-    const element = cart.find((e) => e.nome === carrinhoFiltered.nome)
-    if (element) {
-      const arrFilter = cart.filter((e) => e.nome !== carrinhoFiltered.nome)
-      setCart(arrFilter)
-      setItem("carrinho", arrFilter)
-    }
-    else {
-      setCart([...cart, carrinhoFiltered]);
-      setItem("carrinho", [...cart, carrinhoFiltered])
-    }
   }
 
   return (
@@ -51,20 +34,11 @@ export function FeaturedCard(props) {
           <ProductDescription>{props.product[numero].descricao}</ProductDescription>
         </Description>
         <ButtonWrapper width={'80%'} height={'40px'}>
-          {/* <BuyButton /> */}
-          <div className="btn-Product">
-            {
-              cart.some((itemCart) => itemCart.nome === props.nome) ? (
-                <AddedCart action={() => { handleClick(props) }} />
-              ) : (
-                <AddCart action={() => { handleClick(props) }} />
-              )
-            }
-          </div>
+           <BuyButton product={props.product[numero]}/>
         </ButtonWrapper>
 
       </Featured>
-      <ImageWrapper>
+      <ImageWrapper >
         <img src={props.product[numero].url_imagem} alt="imagem" />
       </ImageWrapper>
     </ContainerCard>
