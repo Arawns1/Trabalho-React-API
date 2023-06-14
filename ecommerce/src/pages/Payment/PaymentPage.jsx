@@ -11,7 +11,9 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useCart } from '../../common/hooks/useCart.jsx';
 import PaymentErrorToast from '../../common/components/modals/PaymentError/PaymentErrorToast.jsx';
-import {    useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { api } from '../../services/api.js';
+import { getItem } from '../../services/LocalStorage.js';
 
 
 export function PaymentPage() {
@@ -51,11 +53,28 @@ export function PaymentPage() {
     }, [open])
 
     const verifyInformations = () => {
-        if (nomeTitular == '' || numeroCartao == ''|| dataExpiracao == '' || CVV == '') {
+        if (nomeTitular == '' || numeroCartao == '' || dataExpiracao == '' || CVV == '') {
             setOpen(true);
             setSeverity('error');
             return ''
-        }else{
+        } else {
+
+            api.post('/pedidos', {
+                "data_pedido": "2023-06-30",
+                "data_entrega": "2023-06-30",
+                "data_envio": "2023-06-30",
+                "status": "Entregue",
+                "cliente": {
+                    "id_cliente": 1
+                }
+            },{
+                headers: {
+                    Authorization: `Bearer ${getItem('user').accessToken}`
+                }
+            }
+
+            )
+
             return navigate("/pedido-concluido")
         }
     }
@@ -65,7 +84,6 @@ export function PaymentPage() {
             {
                 open ? <PaymentErrorToast show={open} severity={severity} /> : ''
             }
-
 
             <PaymentWrapper>
                 <PaymentContainer>
@@ -83,7 +101,7 @@ export function PaymentPage() {
                             </PaymentTinyInputs>
                         </PaymentInputs>
                         <ButtonWrapper onClick={verifyInformations}>
-                                <PayButton />
+                            <PayButton />
                         </ButtonWrapper>
                     </PaymentInfo>
                     <OrderSumary>
