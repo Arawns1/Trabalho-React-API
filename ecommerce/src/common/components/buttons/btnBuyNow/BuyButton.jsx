@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 
 import {ButtonContainer, ButtonTitle, ButtonIcon} from './style'
 import {faBagShopping} from '@fortawesome/free-solid-svg-icons';
@@ -18,6 +19,7 @@ export function BuyButton(props){
             setCart([...cart, carrinhoFiltered]);
             setItem("carrinho", [...cart, carrinhoFiltered])
         }
+
         navigate('/carrinho')
       }
 

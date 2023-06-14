@@ -45,7 +45,7 @@ export function LoginPage() {
                         setRedirectHome(true);
                         setItem('cliente', response.data);
                     } );
-                }).catch(error => {
+                }).catch(() => {
                     setOpen(true);
                     setSeverity('error');
                 })
