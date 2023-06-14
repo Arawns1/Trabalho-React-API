@@ -1,11 +1,10 @@
+import { ValorTotal } from "./style"
 
-import "./style.css"
 export function CardValortotal (){
     return(
-        <div className="valorTotal">
+        <ValorTotal>
             <p>Valor Total: R$ 999,99</p>
-            
-        </div>
+        </ValorTotal>
 
     )
 

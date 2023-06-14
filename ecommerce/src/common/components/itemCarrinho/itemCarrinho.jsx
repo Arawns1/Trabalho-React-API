@@ -1,7 +1,15 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
-import { ItemCarrinhoContainer, InfoProduto, ImageContainer } from './style';
-import './style.css'
+import { ItemCarrinhoContainer,
+  InfoProduto,
+  ImageContainer,
+  NomeWrapper,
+  PrecoWrapper,
+  NomeProduto,
+  PrecoProduto,
+  QuantidadeProduto,
+  FormatButtons,
+  BtnQuantidade } from './style';
 
 export function ItemCarrinho(props) {
   const [quantidade, setQuantidade] = useState(1);
@@ -34,19 +42,19 @@ export function ItemCarrinho(props) {
       <ImageContainer>
         <img src={props.imagem} alt="Imagem do produto" />
       </ImageContainer>
-      <div className='nome-wrapper'>
-        <p className="nomeProduto">{props.nome}</p>
-      </div>
+      <NomeWrapper>
+        <NomeProduto>{props.nome}</NomeProduto>
+      </NomeWrapper>
       <hr/>
-      <div className="formatarButtons">
-        <button className='btn-qntd' onClick={handleRemove}>-</button>
-        <p className="quantidadeProduto">{quantidade}</p>
-        <button className='btn-qntd' onClick={handleAdd}>+</button>
-      </div>
+      <FormatButtons>
+        <BtnQuantidade onClick={handleRemove}>-</BtnQuantidade>
+        <QuantidadeProduto>{quantidade}</QuantidadeProduto>
+        <BtnQuantidade onClick={handleAdd}>+</BtnQuantidade>
+      </FormatButtons>
       <hr/>
-      <div className='preco-wrapper'>
-        <p className="precoProduto"> R$ {precoTotal}</p>
-      </div>
+      <PrecoWrapper>
+        <PrecoProduto> R$ {precoTotal}</PrecoProduto>
+      </PrecoWrapper>
     </InfoProduto>
   </ItemCarrinhoContainer>
   );

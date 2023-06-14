@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import { FeaturedCard } from '../../components/cards/featuredCard/FeaturedCard.jsx'
-import './style.css'
+import { FeatCard,
+  FeaturedCardTitle,
+  FeaturedCardContainer } from './style.js';
 
 export function FeaturedProducts(props) {
   return (
