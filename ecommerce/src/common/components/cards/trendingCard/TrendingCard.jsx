@@ -30,20 +30,19 @@ export function TrendingCard(props) {
     <div>
       <ProductCard>
         <ImageWrapper>
-          <ProductImage src={props.imagem} alt="imagem do produto" />
+          <ProductImage src={props.product.url_imagem} alt="imagem do produto" />
         </ImageWrapper>
-
         <ProductInfos >
-          <span>{props.nome}</span>
-          <p>R${props.preco}</p>
+          <span>{props.product.nome}</span>
+          <p>R${props.product.valor_unitario}</p>
         </ProductInfos>
 
         <div className="bottomProduct">
           {
-            cart.some((itemCart) => itemCart.nome === props.nome) ? (
-              <AddedCart action={() => { handleClick(props) }} />
+            cart.some((itemCart) => itemCart.nome === props.product.nome) ? (
+              <AddedCart action={() => { handleClick(props.product) }} />
             ) : (
-              <AddCart action={() => { handleClick(props) }} />
+              <AddCart action={() => { handleClick(props.product) }} />
             )
           }
         </div>

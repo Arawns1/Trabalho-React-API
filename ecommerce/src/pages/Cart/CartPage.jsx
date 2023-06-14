@@ -18,7 +18,7 @@ export function CartPage() {
 
     useEffect(() => {
         cart.map(item => {
-            updateFinalPrice(item.preco)
+            updateFinalPrice(item.valor_unitario)
         })
     }, [])
 
@@ -56,10 +56,10 @@ export function CartPage() {
                             <CartList>
                                 {cart.map(item => {
                                     return (
-                                        <ItemCarrinho key={item.nome}
+                                        <ItemCarrinho key={item.idProduto}
                                             nome={item.nome}
-                                            valor={item.preco}
-                                            imagem={item.imagem}
+                                            valor={item.valor_unitario}
+                                            imagem={item.url_imagem}
                                             quantidade={quantidades[item.nome] || 1}
                                             updateFinalPrice={updateFinalPrice}
                                             updateQuantidade={updateQuantidade} />
