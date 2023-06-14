@@ -1,10 +1,18 @@
-h3 {
-  font-size: 32px;
+.productsTitle {
+  font-size: 28px;
+}
+.trending-products-container{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.grid-container{
+  width: 100%;
 }
 
 .dpGrid {
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  justify-content: center;
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  column-gap: 80px;
+  row-gap: 68px;
 }

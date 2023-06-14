@@ -14,6 +14,7 @@ import {
     InputDiv,
     PersonalInformation
 } from './Style';
+import './style.css';
 import SignUpErrorToast from '../../common/components/modals/SignUpError/SignUpErrorToast';
 
 export function SignUpPage() {
@@ -91,6 +92,8 @@ export function SignUpPage() {
                     "id_endereco": response.data.id_endereco
                 }
             }).then(response => {
+
+                setItem('cliente', response.data);
                 api.post('/auth/signin', {
                     "username": nome.replaceAll(" ", ""),
                     "password": senha

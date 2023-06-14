@@ -5,7 +5,6 @@ import { TrendingProductsContainer, ProductsTitle, GridContainer, DpGrid } from 
 export function TrendingProducts(props) {
 
   const {products} = props;
-
   return(
     <TrendingProductsContainer>
       <ProductsTitle>Produtos em alta</ProductsTitle>

@@ -25,7 +25,6 @@ export function ItemCarrinho(props) {
       setQuantidade(quantidade - 1);
       props.updateFinalPrice(-preco)
       props.updateQuantidade(props.nome, quantidade - 1);
-      console.log(props)
     }
   };
 

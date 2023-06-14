@@ -25,6 +25,11 @@ export function DropDown(props) {
     return navigate("/")
   }
 
+  const handleMyOrders = () => {
+    setAnchorEl(null);
+    return navigate("/meus-pedidos")
+  }
+
   return (
     <div>
         
@@ -36,7 +41,6 @@ export function DropDown(props) {
         <StyledIcon icon={faCircleUser}/>
         <span>Olá, {props.user.username}</span>
     </NavItem>
-        
 
       <Menu
         id="basic-menu"
@@ -47,8 +51,8 @@ export function DropDown(props) {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>Minhas compras</MenuItem>
-        <MenuItem onClick={handleLogout}>Sair</MenuItem>
+          <MenuItem onClick={handleMyOrders}>Minhas compras</MenuItem>
+          <MenuItem onClick={handleLogout}>Sair</MenuItem>
       </Menu>
     </div>
   );

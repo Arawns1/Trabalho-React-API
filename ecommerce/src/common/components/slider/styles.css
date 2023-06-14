@@ -3,11 +3,10 @@
   }
   
   .Slider {
-    margin-top: 90px;
+    margin-top: 20px;
     height: 60vh;
   }
   .slider-swaper{
-    margin-top: 90px;
     height: 100%;
   }
   .Slider .swiper-slide {

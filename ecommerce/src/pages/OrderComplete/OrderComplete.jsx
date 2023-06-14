@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { PagamentoFinalizado, PedidoNumForm, PedidoNum, ButtonForm, Btn } from './style';
 
+
 export function OrderComplete() {
   const numPedido = 999; // Número do pedido
 

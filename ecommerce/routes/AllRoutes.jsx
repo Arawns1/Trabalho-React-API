@@ -9,6 +9,7 @@ import { PaymentPage } from '../src/pages/Payment/PaymentPage'
 import { NotFoundPage } from '../src/pages/Exceptions/NotFound/NotFoundPage'
 import {EmptyCartPage} from '../src/pages/Exceptions/EmptyCartPage/EmptyCart'
 import { OrderComplete } from '../src/pages/OrderComplete/OrderComplete'
+import { MyOrdersPage } from '../src/pages/MyOrders/MyOrdersPage'
 
 export function AllRoutes() {
     return (
@@ -24,6 +25,7 @@ export function AllRoutes() {
                     <Route Component={SignUpPage}  path='/cadastro'></Route>
                     <Route Component={PaymentPage} path='/pagamento'></Route>
                     <Route Component={OrderComplete} path='/pedido-concluido'></Route>
+                    <Route Component={MyOrdersPage} path='/meus-pedidos'></Route>
                 </Route>
                 <Route Component={NotFoundPage} path='*'/>
             </Routes>

@@ -9,6 +9,8 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { EmptyCartPage } from "../Exceptions/EmptyCartPage/EmptyCart";
 import { useCart } from "../../common/hooks/useCart";
+import { LoginButton } from "../../common/components/buttons/btnLogin/LoginButton";
+
 
 export function CartPage() {
     const [precoFinal, setPrecoFinal] = useState(0.0);
@@ -18,7 +20,8 @@ export function CartPage() {
 
     useEffect(() => {
         cart.map(item => {
-            updateFinalPrice(item.preco)
+
+            updateFinalPrice(item.valor_unitario)
         })
     }, [])
 
@@ -56,10 +59,10 @@ export function CartPage() {
                             <CartList>
                                 {cart.map(item => {
                                     return (
-                                        <ItemCarrinho key={item.nome}
+                                        <ItemCarrinho key={item.idProduto}
                                             nome={item.nome}
-                                            valor={item.preco}
-                                            imagem={item.imagem}
+                                            valor={item.valor_unitario}
+                                            imagem={item.url_imagem}
                                             quantidade={quantidades[item.nome] || 1}
                                             updateFinalPrice={updateFinalPrice}
                                             updateQuantidade={updateQuantidade} />
@@ -72,9 +75,16 @@ export function CartPage() {
                                 <Link to='/'>
                                     <BackButton title={'Voltar as compras'} />
                                 </Link>
-                                <Link to='/pagamento'>
+
+                                {getItem('user') ? (
+                                    <Link to='/pagamento'>
                                     <PayButton action={handleCart} />
-                                </Link>
+                                    </Link>
+                                ) : (
+                                    <Link to='/login'>
+                                       <LoginButton/>
+                                    </Link>
+                                )}
 
                             </CardActions>
                         </>
