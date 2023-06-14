@@ -9,7 +9,6 @@ import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { SumaryCard } from '../../common/components/cards/sumaryCard/SumaryCard.jsx';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useCart } from '../../common/hooks/useCart.jsx';
 import PaymentErrorToast from '../../common/components/modals/PaymentError/PaymentErrorToast.jsx';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../../services/api.js';
@@ -19,7 +18,7 @@ import { getItem } from '../../services/LocalStorage.js';
 
 export function PaymentPage() {
 
-    const { cart } = useCart();
+    
     let navigate = useNavigate();
     const [nomeTitular, setNomeTitular] = useState('');
     const [numeroCartao, setNumeroCartao] = useState('');
@@ -27,7 +26,7 @@ export function PaymentPage() {
     const [CVV, setCVV] = useState('');
     const [open, setOpen] = useState(false);
     const [severity, setSeverity] = useState('');
-
+    const [cart, setCart] = useState([])
     function handleNomeChange(e) {
         setNomeTitular(e.target.value);
     }
@@ -41,12 +40,12 @@ export function PaymentPage() {
         setCVV(e.target.value);
     }
 
-
     useEffect(() => {
+        setCart(getItem('carrinho'))
         if (open) {
-            const timer = setTimeout(() => {
+            const timer = setTimeout(() => {    
                 setOpen(false);
-            }, 99999999);
+            }, 3500);
             return () => {
                 clearTimeout(timer);
             };
@@ -96,8 +95,6 @@ export function PaymentPage() {
 
 
             })
-            
-         
             return navigate("/pedido-concluido")
         }
     }
@@ -133,7 +130,7 @@ export function PaymentPage() {
                             {
                                 cart.map(item => {
                                     return (
-                                        <SumaryCard key={cart.indexOf(item)} nome={item.nome} valor={item.valor_unitario} quantidade={item.quantidade}></SumaryCard>
+                                        <SumaryCard key={cart.indexOf(item)}  quantidade={item.quantidade} nome={item.nome} valor={item.valor_unitario}></SumaryCard>
                                     )
                                 })
                             }
