@@ -1,19 +1,26 @@
 import styled from "styled-components";
 
-export const PagamentoFinalizado = styled.p `
-  display: flex; 
+export const PagamentoFinalzadoContainer = styled.div`
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 50px;
+  `
+
+
+export const PagamentoFinalizado = styled.p `
   text-align: center;
   font-size: 45px;
-  margin-top: 25%;
-  justify-content: center;
+  
 `
 
 export const PedidoNumForm = styled.div `
   display: flex;
   justify-content: right;
-  padding: 5%;
-  margin-right: 15%;
+  height: 100px;
 `
 
 export const PedidoNum = styled.p `
@@ -27,14 +34,14 @@ export const PedidoNum = styled.p `
   border-radius: 7px;
   font-size: 25px;
   width: 200px;
+  height: 50px;
 `
 
 export const ButtonForm = styled.div `
   display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-  padding-top: 10%;
-  margin-left: 20%;
+  justify-content: center;
+  align-items: center;
+  
 `
 
 export const Btn = styled.button `
@@ -43,8 +50,12 @@ export const Btn = styled.button `
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 150px;
-  height: 40px;
+  width: 300px;
+  height: 60px;
   background-color: #9460E9;
   border-radius: 7px;
+  &:hover{
+        cursor:pointer;
+        filter: brightness(0.9);
+    }
 `

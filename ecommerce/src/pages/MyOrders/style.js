@@ -37,3 +37,17 @@ export const OrderCard = styled.div`
     padding: 20px;
 `
 
+export const OrderHeader = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 5vw;
+    hr{
+        align-self: stretch;
+        height: 10px;
+        margin: 5px 0px;
+    }
+`
+export const OrderCardDiv = styled.div`
+`
