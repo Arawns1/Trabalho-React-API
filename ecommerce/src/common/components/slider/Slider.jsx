@@ -1,7 +1,8 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import img1 from '/assets/banner/b2.png'
-
+import img2 from '/assets/banner/1.png'
+import img3 from '/assets/banner/2.png'
 
 // Import Swiper styles
 import 'swiper/css';
@@ -31,6 +32,8 @@ export function Slider() {
         className="slider-swaper"
       >
         <SwiperSlide><img src={img1} alt="" /></SwiperSlide>
+        <SwiperSlide><img src={img2} alt="" /></SwiperSlide>
+        <SwiperSlide><img src={img3} alt="" /></SwiperSlide>
       </Swiper>
     </div>
   );
