@@ -154,7 +154,7 @@ export function SignUpPage() {
                         </InputDiv>
                         <InputDiv>
                             <label>Senha</label>
-                            <CadastroInput type={'text'} placeholder={'Digite uma senha'} onChange={handleSenhaChange} />
+                            <CadastroInput type={'password'} placeholder={'Digite uma senha'} onChange={handleSenhaChange} />
                         </InputDiv>
                         <InputDiv>
                             <label>CEP</label>
