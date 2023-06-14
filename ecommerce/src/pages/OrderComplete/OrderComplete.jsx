@@ -10,7 +10,6 @@ export function OrderComplete() {
     <PagamentoFinalzadoContainer>
         <img src='https://media.discordapp.net/attachments/1081311951914815549/1118622712768766004/output-onlinegiftools.gif?width=134&height=134' alt="" />
         <PagamentoFinalizado>Pagamento Finalizado com Sucesso!</PagamentoFinalizado>
-        {localStorage.removeItem('carrinho')}
         {setCart([])}
         <ButtonForm>
             <Link to='/'><Btn>Voltar para a Tela Inicial</Btn> </Link>
