@@ -15,8 +15,10 @@ export const BannerContainer = styled.div`
         img{
             object-fit: contain;
             object-position: center;
-            height: 80%;
+            height: 350px;
             width: 80%;
+            
+            filter: drop-shadow(30px 10px 10px rgba(33, 33, 36, 0.44));
         }
 
         @media (max-width: 1024px) {
@@ -25,6 +27,7 @@ export const BannerContainer = styled.div`
             object-position: center;
             height: 50%;
             width: 50%;
+            
         }
 
         @media (max-width: 480px) {

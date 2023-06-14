@@ -7,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 export function LoginPage() {
 
     let navigate = useNavigate();
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [senha, setSenha] = useState('');
     const [open, setOpen] = useState(false);
     const [severity, setSeverity] = useState('');
@@ -24,8 +24,8 @@ export function LoginPage() {
         }
     }, [open]);
 
-    const handleEmailChange = event => {
-        setEmail(event.target.value);
+    const handleUsernameChange = event => {
+        setUsername(event.target.value);
     };
 
     const handleSenhaChange = event => {
@@ -34,21 +34,20 @@ export function LoginPage() {
 
     function handleLogin() {
         api.post('/auth/signin', {
-            username: email,
+            username: username,
             password: senha
-        })
-            .then(response => {
-                setOpen(true);
-                setSeverity('success');
-                setItem('user', response.data);
-                setRedirectHome(true);
-            })
-            .catch(() => {
-                setOpen(true);
-                setSeverity('error');
-            })
-    }
-
+        }).then(response => {
+                    setItem('user', response.data);
+                    api.get(`/clientes/findByEmail?email=${response.data.email}`)
+                    .then(response =>{
+                        setOpen(true);
+                        setSeverity('success');
+                        setRedirectHome(true);
+                        setItem('cliente', response.data);
+                        console.log(response.data)
+                    } );
+                })
+        }
     if (redirectHome) {
         setTimeout(() => {
             return navigate("/")
@@ -72,8 +71,8 @@ export function LoginPage() {
                                     type="text"
                                     placeholder="Digite seu usuário"
                                     required
-                                    onChange={handleEmailChange}
-                                    value={email}
+                                    onChange={handleUsernameChange}
+                                    value={username}
                                 />
                                 <input
                                     className="input"

@@ -11,6 +11,8 @@ export const Container = styled.div `
     justify-content: space-between;
     align-items: center;
     padding: 0px 40px;
+    position: fixed;
+    z-index: 1000;
     @media (max-width: 480px) {
         padding: 0px 20px;
     }

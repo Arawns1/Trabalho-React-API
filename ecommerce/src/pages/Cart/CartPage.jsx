@@ -14,21 +14,12 @@ export function CartPage() {
     const [precoFinal, setPrecoFinal] = useState(0.0);
     const [quantidades, setQuantidades] = useState({});
 
-    const {cart, setCart} = useCart();
+    const { cart } = useCart();
 
     useEffect(() => {
-        // let cartItems = getItem('carrinho')
-
-        // if (!cartItems) {
-        //     cartItems = [];
-        // }
-
-        // setCart(cartItems)
-
         cart.map(item => {
             updateFinalPrice(item.preco)
         })
-
     }, [])
 
     function handleCart() {
@@ -89,7 +80,7 @@ export function CartPage() {
                         </>
                     )
                     :
-                    <EmptyCartPage/>
+                    <EmptyCartPage />
             }
 
         </CartContainer>

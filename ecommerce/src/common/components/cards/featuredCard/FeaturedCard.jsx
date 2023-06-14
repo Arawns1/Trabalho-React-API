@@ -44,7 +44,6 @@ export function FeaturedCard(props) {
 
   return (
     <ContainerCard>
-
       <Featured>
         <Description>
           <ProductTitle>{props.product[numero].nome}</ProductTitle>
