@@ -31,3 +31,12 @@ export const ProductInfos = styled.div`
   }
 
 `
+
+export const ImageWrapper = styled.div`
+  width: 150px;
+  height: 150px;
+`
+export const ProductImage = styled.img`
+  width: 100%;
+  height: 100%x;
+`

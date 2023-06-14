@@ -14,6 +14,7 @@ export const SumaryCardContent = styled.div`
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    gap: 10px
 `
 export const ItemQuantity = styled.h3`
     font-weight: 500;

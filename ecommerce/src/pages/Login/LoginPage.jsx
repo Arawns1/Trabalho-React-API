@@ -17,7 +17,7 @@ export function LoginPage() {
         if (open) {
             const timer = setTimeout(() => {
                 setOpen(false);
-            }, 3000);
+            }, 99999999);
             return () => {
                 clearTimeout(timer);
             };
@@ -33,7 +33,7 @@ export function LoginPage() {
     };
 
     function handleLogin() {
-          api.post('/auth/signin', {
+        api.post('/auth/signin', {
             username: email,
             password: senha
         })
@@ -56,50 +56,52 @@ export function LoginPage() {
     }
 
     return (
-        <div className="container">
-            <div className="container-login">
-                <span className="title">Login</span>
-                <div className="login-form">
-                    <div className="form-body">
-                        <div className="input-container">
-                            <input
-                                className="input"
-                                type="text"
-                                placeholder="Digite seu email"
-                                required
-                                onChange={handleEmailChange}
-                                value={email}
-                            />
-                            <input
-                                className="input"
-                                type="password"
-                                placeholder="Digite sua senha"
-                                required
-                                onChange={handleSenhaChange}
-                                value={senha}
-                            />
+        <>
+            {
+                open ? <LoginErrorToast show={open} severity={severity} /> : ''
+            }
+
+            <div className="container">
+                <div className="container-login">
+                    <span className="title">Login</span>
+                    <div className="login-form">
+                        <div className="form-body">
+                            <div className="input-container">
+                                <input
+                                    className="input"
+                                    type="text"
+                                    placeholder="Digite seu usuário"
+                                    required
+                                    onChange={handleEmailChange}
+                                    value={email}
+                                />
+                                <input
+                                    className="input"
+                                    type="password"
+                                    placeholder="Digite sua senha"
+                                    required
+                                    onChange={handleSenhaChange}
+                                    value={senha}
+                                />
+                                <div className="esqueceuSenha">
+                                    <span>Esqueceu sua senha?</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="container-login-form-btn">
-                        <button className="login-form-btn" onClick={handleLogin}>
-                            Entrar
-                        </button>
-                        <div className="form-footer">
+                        <div className="container-login-form-btn">
+                            <button className="login-form-btn" onClick={handleLogin}>
+                                Entrar
+                            </button>
                             <div className="criarConta">
                                 <span className="texto">
                                     Não tem uma conta? <Link to='/cadastro'><span className="cadastrar">Cadastre-se</span></Link>
                                 </span>
                             </div>
-                            <div className="esqueceuSenha">
-                                <span>Esqueceu sua senha?</span>
-                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-            {
-                open ? <LoginErrorToast show={open} severity={severity} /> : ''
-            }
-        </div>
+        </>
     );
 }
