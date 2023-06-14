@@ -11,7 +11,7 @@ export function HeaderWithoutSearch(){
             <LeftMenu>
                 <Link to='/'>
                     <LogoWrapper>
-                        <img src="/assets/hex_tranparente.png" alt="" />
+                        <img src="/assets/logos/hex_tranparente.png" alt="" />
                     </LogoWrapper>
                 </Link>
                 

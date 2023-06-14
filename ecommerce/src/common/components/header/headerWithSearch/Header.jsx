@@ -19,7 +19,7 @@ export function Header() {
                 <LeftMenu>
                     <Link to='/'>
                         <LogoWrapper>
-                            <img src="/assets/hex_tranparente.png" alt="logo do site" />
+                            <img src="/assets/logos/hex_tranparente.png" alt="logo do site" />
                         </LogoWrapper>
                     </Link>
                     <SearchBarContainer>
@@ -38,7 +38,6 @@ export function Header() {
                                     <StyledIcon icon={faCircleUser} />
                                     <Link to='/login'><span>Minha Conta</span></Link>
                                 </>
-
                             )}
 
                         </NavItem>
