@@ -63,9 +63,6 @@ export const PaymentTinyInputs = styled.div`
   gap: 20%;
 `
 export const ButtonWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 60%;
 `
 

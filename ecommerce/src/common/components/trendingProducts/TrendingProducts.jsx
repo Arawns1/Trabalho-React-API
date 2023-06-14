@@ -5,7 +5,7 @@ import './style.css'
 
 export function TrendingProducts(props) {
 
-  const {products, cart, cartAction} = props;
+  const {products} = props;
 
   return(
     <div className='trending-products-container'>
@@ -17,8 +17,6 @@ export function TrendingProducts(props) {
           return(
             <TrendingCard nome={product.nome} 
                           preco={product.valor_unitario} 
-                          cart={cart}
-                          cartAction = {cartAction}
                           key={products.indexOf(product)}
                           imagem={product.url_imagem}/>
           )

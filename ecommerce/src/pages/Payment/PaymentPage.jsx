@@ -8,6 +8,7 @@ import { SumaryCard } from '../../common/components/cards/sumaryCard/SumaryCard.
 import { useEffect } from 'react';
 import { getItem } from "../../services/LocalStorage.js";
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export function PaymentPage(){
 
@@ -35,7 +36,9 @@ export function PaymentPage(){
                     </PaymentTinyInputs>
                 </PaymentInputs>
                 <ButtonWrapper>
-                    <PayButton/>
+                    <Link to='/pedido-concluido'>
+                        <PayButton/>
+                    </Link>
                 </ButtonWrapper>
             </PaymentInfo>
             <OrderSumary>

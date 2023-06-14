@@ -8,6 +8,7 @@ import {SignUpPage} from '../src/pages/SignUp/SignUpPage'
 import { PaymentPage } from '../src/pages/Payment/PaymentPage'
 import { NotFoundPage } from '../src/pages/Exceptions/NotFound/NotFoundPage'
 import {EmptyCartPage} from '../src/pages/Exceptions/EmptyCartPage/EmptyCart'
+import { OrderComplete } from '../src/pages/OrderComplete/OrderComplete'
 
 export function AllRoutes() {
     return (
@@ -22,6 +23,7 @@ export function AllRoutes() {
                     <Route Component={LoginPage}  path='/login'></Route>
                     <Route Component={SignUpPage}  path='/cadastro'></Route>
                     <Route Component={PaymentPage} path='/pagamento'></Route>
+                    <Route Component={OrderComplete} path='/pedido-concluido'></Route>
                 </Route>
                 <Route Component={NotFoundPage} path='*'/>
             </Routes>
