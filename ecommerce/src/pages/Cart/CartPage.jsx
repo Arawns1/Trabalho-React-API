@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { EmptyCartPage } from "../Exceptions/EmptyCartPage/EmptyCart";
 import { useCart } from "../../common/hooks/useCart";
+import { LoginButton } from "../../common/components/buttons/btnLogin/LoginButton";
 
 export function CartPage() {
     const [precoFinal, setPrecoFinal] = useState(0.0);
@@ -72,9 +73,16 @@ export function CartPage() {
                                 <Link to='/'>
                                     <BackButton title={'Voltar as compras'} />
                                 </Link>
-                                <Link to='/pagamento'>
+
+                                {getItem('user') ? (
+                                    <Link to='/pagamento'>
                                     <PayButton action={handleCart} />
-                                </Link>
+                                    </Link>
+                                ) : (
+                                    <Link to='/login'>
+                                       <LoginButton/>
+                                    </Link>
+                                )}
 
                             </CardActions>
                         </>

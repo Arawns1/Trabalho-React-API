@@ -29,7 +29,7 @@ export function Banner(){
                     <BannerDescription>{product.descricao}</BannerDescription>
                 </BannerInfo>
                 <ButtonWrapper width={'200px'} height={'50px'}>
-                    <BuyButton/>
+                    <BuyButton product={product}/>
                 </ButtonWrapper>
             </InfoWrapper>
             <img src={product.url_imagem} alt="Imagem do Produto" />
