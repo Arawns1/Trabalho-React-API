@@ -5,7 +5,8 @@ export const CategoriesContainer = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 20px;
+    gap: 30px;
+   
     
     `
 export const CategoriesCardContainer = styled.div`
@@ -17,3 +18,6 @@ export const CategoriesCardContainer = styled.div`
         gap: 50px;
         overflow-x: auto;
     `
+export const CategoryTitle = styled.h2`
+    font-size: 28px;
+`

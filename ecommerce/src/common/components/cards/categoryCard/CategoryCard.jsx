@@ -1,11 +1,14 @@
+/* eslint-disable react/prop-types */
 
-import {CardContainer, CategoryImage, CategoryTitle} from "./style"
+import {CardContainer, CategoryImage, CategoryTitle, CategoryImageWrapper} from "./style"
 
-export function CategoryCard(){
+export function CategoryCard(props){
     return(
         <CardContainer>
-            <CategoryImage src="https://source.unsplash.com/150x150?cute-animals" alt="Imagem da Categoria"/>
-            <CategoryTitle>Nome da Categoria</CategoryTitle>
+            <CategoryImageWrapper>
+                <CategoryImage src={props.img} alt="Imagem da Categoria"/>
+            </CategoryImageWrapper>
+            <CategoryTitle>{props.nome}</CategoryTitle>
         </CardContainer>
     )
 }

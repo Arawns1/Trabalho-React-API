@@ -1,23 +1,53 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
+/* eslint-disable react/prop-types */
+import { ProductCard, ProductInfos, ProductImage, ImageWrapper } from './style'
+import { AddCart } from '../../buttons/btnAddCart/AddCart';
+import { AddedCart } from '../../buttons/btnItemAdded/AddedCart';
+import { setItem } from '../../../../services/LocalStorage'
+import { useCart } from '../../../hooks/useCart';
 
-import {ProductCard} from './style'
+export function TrendingCard(props) {
 
-export function TrendingCard() {
+  const { cart, setCart } = useCart();
+
+  function handleClick(obj) {
+    const carrinhoFiltered = { ...obj }
+    delete carrinhoFiltered.cart
+
+    const element = cart.find((e) => e.nome === carrinhoFiltered.nome)
+    if (element) {
+      const arrFilter = cart.filter((e) => e.nome !== carrinhoFiltered.nome)
+      setCart(arrFilter)
+      setItem("carrinho", arrFilter)
+    }
+    else {
+      setCart([...cart, carrinhoFiltered]);
+      setItem("carrinho", [...cart, carrinhoFiltered])
+    }
+  }
+
   return (
+
     <div>
-      <div className="container">
-        <div className="product">
-          <ProductCard>
-            <img src="https://source.unsplash.com/300x200?cars" alt="" />
-            <span>Nome do Produto</span>
-            <p>R$ 20,99</p>
-            <div className="bottomProduct">
-              <button className='btnProduct'>Adicionar ao Carrinho<FontAwesomeIcon icon={faCirclePlus} style={{color: "#9460e9",}} /></button>
-            </div>
-          </ProductCard>
+      <ProductCard>
+        <ImageWrapper>
+          <ProductImage src={props.imagem} alt="imagem do produto" />
+        </ImageWrapper>
+
+        <ProductInfos >
+          <span>{props.nome}</span>
+          <p>R${props.preco}</p>
+        </ProductInfos>
+
+        <div className="bottomProduct">
+          {
+            cart.some((itemCart) => itemCart.nome === props.nome) ? (
+              <AddedCart action={() => { handleClick(props) }} />
+            ) : (
+              <AddCart action={() => { handleClick(props) }} />
+            )
+          }
         </div>
-      </div>
+      </ProductCard>
     </div>
   )
 }
