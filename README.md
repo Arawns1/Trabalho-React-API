@@ -20,7 +20,8 @@ Um ecommerce na área de informática. https://loja-hexbyte.vercel.app/
 ## Stack utilizada
 
 **Front-end:** React.js e Styled Components
-**Back-end:** Spring Boot e Postgree
+
+**Back-end:** Spring Boot e Postgres
 
 ## Screenshots
 
