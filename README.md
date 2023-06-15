@@ -19,10 +19,11 @@ Um ecommerce na área de informática. https://loja-hexbyte.vercel.app/
 
 ## Stack utilizada
 
-**Front-end:** React
+**Front-end:** React.js e Styled Components
 
+**Back-end:** Spring Boot e Postgres
 
 ## Screenshots
 
-![App Screenshot](https://cdn.discordapp.com/attachments/1090076539602866176/1118631953713868860/Design_sem_nome.gif)
+![App Screenshot](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjZmY2M2MjdkMWIwMzAyNmIwNGM4YzJmMzI3NDM5N2IwOTcxMjY4NyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/P0RURsLof5LV0Unp81/giphy.gif)
 
